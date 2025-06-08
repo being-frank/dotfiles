@@ -1,4 +1,4 @@
-![more dots](https://raw.githubusercontent.com/franks921/dotfiles/master/assets/dots.jpg)
+![more dots](https://raw.githubusercontent.com/frank-who/dotfiles/master/assets/dots.jpg)
 
 ## Installation
 
