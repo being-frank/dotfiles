@@ -74,7 +74,7 @@ $character"""
 
 [git_metrics]
   disabled      = false
-  format        = ' [[+$added]($added_style)[-$deleted]($deleted_style)]($style) '
+  format        = '([+$added]($added_style))([-$deleted]($deleted_style))'
   added_style   = 'bg:green fg:black'
   deleted_style = 'bg:red fg:black'
 
