@@ -74,12 +74,12 @@ $character"""
 
 [git_metrics]
   disabled      = false
-  format        = ' [+$added]($added_style)[-$deleted]($deleted_style) '
+  format        = ' [[+$added]($added_style)[-$deleted]($deleted_style)]($style) '
   added_style   = 'bg:green fg:black'
   deleted_style = 'bg:red fg:black'
 
 [git_state]
-  format = '\([$state( $progress_current/$progress_total)]($style)\) '
+  format = '\([$state($progress_current/$progress_total)]($style)\) '
 
 [git_status]
   style      = ''
