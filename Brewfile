@@ -1,7 +1,9 @@
-tap 'homebrew/bundle'
+brew 'git'
+brew 'gh'
+brew 'starship'
+brew 'tree'
 
 brew 'diff-so-fancy'
-brew 'git'
 brew 'github/gh/gh'
 brew 'gnu-sed'
 brew 'graphviz'

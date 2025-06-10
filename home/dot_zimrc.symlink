@@ -1,0 +1,34 @@
+# === Behaviour
+
+zmodule environment
+zmodule input
+
+# === Productivity
+
+zmodule asdf
+zmodule git
+zmodule termtitle
+zmodule utility
+
+# === Prompt enhancement
+
+zmodule duration-info
+zmodule git-info
+zmodule prompt-pwd
+
+# === Distro-specific
+
+zmodule homebrew
+
+# === Community modules
+
+zmodule joke/zim-starship
+zmodule joke/zim-github-cli
+
+# === Completion (DO NOT CHANGE ORDER)
+
+# zmodule zsh-users/zsh-completions --fpath src
+zmodule completion
+# zmodule zsh-users/zsh-syntax-highlighting
+# zmodule zsh-users/zsh-history-substring-search
+# zmodule zsh-users/zsh-autosuggestions
