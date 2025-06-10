@@ -44,18 +44,6 @@ $character"""
   truncation_length = 0
   truncation_symbol = '…/'
 
-[directory.substitutions]
-  Code      = '󰲋'
-  Downloads = ''
-  Music     = '󰝚'
-  Pictures  = ''
-
-[username]
-  format      = '[ $user ]($style)'
-  show_always = true
-  style_root  = 'bg:color_orange fg:color_fg0'
-  style_user  = 'bg:color_orange fg:color_fg0'
-
 [fill]
   symbol = ' '
 
@@ -107,11 +95,6 @@ $character"""
   symbol = ""
   style = "bg:color_blue"
   format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[docker_context]
-  symbol = ""
-  style = "bg:color_bg3"
-  format = '[[ $symbol( $context) ](fg:#83a598 bg:color_bg3)]($style)'
 
 [os]
   disabled = false
