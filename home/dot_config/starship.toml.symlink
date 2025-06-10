@@ -88,7 +88,7 @@ $character"""
   behind     = '[ ${count} ](cyan)'
   conflicted = '[ 󰳤 ${count} ](red)'
   deleted    = '[ 󰛲 ${count} ](red)'
-  diverged   = '[ [${ahead_count}](purple) [${behind_count}](cyan) [|](dimmed white)]($style)'
+  diverged   = '[ [${ahead_count}](purple) [${behind_count}](cyan) ]($style)'
   modified   = '[ 󱗝 ${count} ](yellow)'
   renamed    = '[ 󰏭 ${count} ](yellow)'
   staged     = '[  ${count} ](blue)'
