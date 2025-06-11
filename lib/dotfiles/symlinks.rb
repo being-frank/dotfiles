@@ -4,17 +4,21 @@ module Dotfiles
   class Symlinks
     class << self
 
-      HOME_SYMLINKS = "#{ROOT_PATH}/home"
+      HOME_SYMLINKS = "#{ROOT_PATH}/home/symlinks".freeze
 
       def run
         message('Symlinks:'.bold, indent: 0)
 
-        symlinks   = Dir.glob("#{HOME_SYMLINKS}/**/*.symlink").sort
+        symlinks   = Dir.glob("#{HOME_SYMLINKS}/**/*").sort
         max_length = symlinks.map { |file| file_basename(file).length }.max
 
-        symlinks.each do |file|
-          create_symlink(file, max_length)
+        symlinks.each do |path|
+          next if File.directory?(path)
+
+          create_symlink(path, max_length)
         end
+
+        system('exec zsh')
       end
 
       private
@@ -26,17 +30,17 @@ module Dotfiles
         def create_symlink(file, max_length=0)
           basename   = file_basename(file)
           source     = File.expand_path(file, ROOT_PATH)
-          target     = File.expand_path("~/#{file_basename(file).gsub(/\.symlink/, '').gsub(/^dot_/, '.')}")
+          target     = File.expand_path("~/#{file_basename(file).gsub(/^dot_/, '.')}")
           target_dir = File.dirname(target)
           message    = ''
 
-          if !File.directory?(target_dir)
+          if !Dir.exist?(target_dir)
             FileUtils.mkdir_p(target_dir)
           end
 
           if File.exist?(source)
-            if File.symlink?(target) && source == File.readlink(target)
-              message = "[Skipped] #{target} exists".red
+            if File.symlink?(target) || File.exist?(target)
+              message = "[Skipped] Target exists: #{target}".red
             else
               FileUtils.ln_s(source, target)
               message = "[Created] #{target}".green
