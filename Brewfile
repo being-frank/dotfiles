@@ -1,16 +1,22 @@
-brew 'git'
+# ==== Git
+
 brew 'gh'
+brew 'git'
+
+# ==== Database
+
+brew 'postgresql@17'
+brew 'redis'
+brew 'sqlite'
+
+# ==== Shell
+
 brew 'starship'
 brew 'tree'
 
-brew 'diff-so-fancy'
-brew 'github/gh/gh'
-brew 'gnu-sed'
+# ==== Devlopment tools
+
+brew 'asdf'
 brew 'graphviz'
 brew 'imagemagick'
-brew 'jandedobbeleer/oh-my-posh/oh-my-posh'
 brew 'overmind'
-brew 'postgres'
-brew 'redis'
-brew 'terminal-notifier'
-brew 'wget'

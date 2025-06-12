@@ -5,7 +5,6 @@ zmodule input
 
 # === Productivity
 
-zmodule asdf
 zmodule git
 zmodule termtitle
 zmodule utility

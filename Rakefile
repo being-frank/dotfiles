@@ -11,7 +11,8 @@ namespace :dotfiles do
     newline
     system('sudo -v')
 
-    %w[zsh ruby symlinks macos_defaults config_files homebrew code].each do |t|
+    # %w[zsh ruby symlinks macos_defaults config_files homebrew code].each do |t|
+    %w[homebrew symlinks].each do |t|
       Rake::Task["dotfiles:#{t}"].invoke
       newline
     end

@@ -19,6 +19,7 @@ $cmd_duration\
 $git_state\
 $git_status\
 $git_metrics\
+[  ]($style)\
 $line_break\
 $character"""
 

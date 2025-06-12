@@ -1,4 +1,4 @@
-require 'time'
+# frozen_string_literal: true
 
 module Dotfiles
   class Symlinks
@@ -7,7 +7,7 @@ module Dotfiles
       HOME_SYMLINKS = "#{ROOT_PATH}/home/symlinks".freeze
 
       def run
-        message('Symlinks:'.bold, indent: 0)
+        message('==> Symlinks'.bold)
 
         symlinks   = Dir.glob("#{HOME_SYMLINKS}/**/*").sort
         max_length = symlinks.map { |file| file_basename(file).length }.max
@@ -40,16 +40,16 @@ module Dotfiles
 
           if File.exist?(source)
             if File.symlink?(target) || File.exist?(target)
-              message = "[Skipped] Target exists: #{target}".red
+              message = "[Skipped] Target exists: #{target}".blue
             else
               FileUtils.ln_s(source, target)
               message = "[Created] #{target}".green
             end
           else
-            message = "[Source Missing] #{source}".red
+            message = "[Error] Source missing #{source}".red
           end
 
-          message(("%-#{max_length}s %s" % [message, nil]), indent: 2)
+          message(("%-#{max_length}s %s" % [message, nil]))
         end
 
     end
