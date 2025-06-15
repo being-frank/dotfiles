@@ -1,3 +1,9 @@
+# Edit aliases
+alias aliases='$EDITOR ~/dotfiles/zsh/aliases.zsh'
+
+# Make sudo understand aliases
+alias sudo='sudo '
+
 # Directories
 #
 alias ..='cd ..'
@@ -26,3 +32,8 @@ alias gst='git stash'
 alias gstp='git stash pop'
 alias grmerged='git branch --no-color --merged | command grep -vE "^(\+|\*|\s*(master|main|develop)\s*$)" | command xargs -n 1 git branch -d'
 alias gg='gaa && gcms'
+
+# OS
+#
+killport() { kill -9 $(lsof -ti:$*); }
+alias flushdnscache='dscacheutil -flushcache'
