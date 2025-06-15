@@ -1,6 +1,9 @@
 # Edit aliases
 alias aliases='$EDITOR ~/dotfiles/zsh/aliases.zsh'
 
+# Editor alias
+alias e='code .'
+
 # Make sudo understand aliases
 alias sudo='sudo '
 
