@@ -1,18 +1,20 @@
+# frozen_string_literal: true
+
 module Dotfiles
   class Zsh
+    class << self
 
-    def self.run
-      message('Shell:'.bold)
+      def run
+        message('==> Shell'.bold)
 
-      if ENV['SHELL'].match(/zsh/)
-        message('zsh'.green, indent: 2)
-      else
-        message('zsh'.red, indent: 2)
-        system('chsh -s `which zsh`')
+        if ENV['SHELL'].match(/zsh/)
+          message('$SHELL is zsh'.blue)
+        else
+          message('Changing $SHELL to zsh'.green)
+          system('chsh -s `which zsh`')
+        end
       end
 
-      system('curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh')
     end
-
   end
 end

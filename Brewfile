@@ -20,3 +20,11 @@ brew 'asdf'
 brew 'graphviz'
 brew 'imagemagick'
 brew 'overmind'
+
+# ==== Ruby dependencies
+
+brew 'autoconf'
+brew 'gmp'
+brew 'libyaml'
+brew 'openssl@3'
+brew 'readline'

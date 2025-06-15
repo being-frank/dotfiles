@@ -1,19 +1,13 @@
-# Movement
-alias ..='cd ../'
-alias ...='cd ../../'
-alias ....='cd ../../../'
-alias cl='clear'
-alias cp='cp -iv'
-alias l='ls -lh'
-alias la='ls -Alh'
-alias lh='ls -Alt | head'
-alias mv='mv -iv'
-alias rm='rm -iv'
-
-# zsh
-alias reload!='exec zsh'
+# Directories
+#
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
 
 # Git
+#
 alias ga='git add'
 alias gaa='git add --all'
 alias gb='git branch'
@@ -32,46 +26,3 @@ alias gst='git stash'
 alias gstp='git stash pop'
 alias grmerged='git branch --no-color --merged | command grep -vE "^(\+|\*|\s*(master|main|develop)\s*$)" | command xargs -n 1 git branch -d'
 alias gg='gaa && gcms'
-
-gcma()  { git commit -m "Add: $*"; }      # add
-gcmr()  { git commit -m "Remove: $*"; }   # remove
-gcmu()  { git commit -m "Update: $*"; }   # update
-gcmf()  { git commit -m "Fix: $*"; }      # fix
-gcmhf() { git commit -m "Hotfix: $*"; }   # hotfix
-gcmrl() { git commit -m "Release: $*"; }  # release
-gcmrf() { git commit -m "Refactor: $*"; } # refactor
-gcms()  { git commit -m "Commit: $(date +%Y-%m-%d--%H:%M) $*"; }
-gcnms() { git commit -n -m "Commit: $(date +%Y-%m-%d--%H:%M) $*"; }
-killport() { kill -9 $(lsof -ti:$*); }
-
-# Ruby / Rails
-alias be='bundle exec'
-alias gitrspec='be rspec `git ls-files --modified --others spec/**/*_spec.rb`'
-alias migrate='rake db:migrate db:test:clone'
-alias opencov='open coverage/index.html'
-alias rake='noglob rake'
-alias rce="EDITOR='code --wait' rails credentials:edit"
-alias rce-staging="X_APP_ENV=staging EDITOR='code --wait' rails credentials:edit"
-alias rce-production="X_APP_ENV=production EDITOR='code --wait' rails credentials:edit"
-alias rr='rails runner'
-alias rspec='rspec --color --format doc'
-alias rst='touch tmp/restart.txt'
-alias tlf='tail -f'
-alias tlfd='tail -f log/development.log'
-alias tlfp='tail -f log/production.log'
-alias tlft='tail -f log/test.log'
-alias dev-restart='overmind restart web worker vite'
-
-# OSX
-alias flushdnscache='dscacheutil -flushcache'
-alias rmdsstores='sudo find ~/ -name .DS_Store -exec rm {} \;'
-alias updatedb='sudo /usr/libexec/locate.updatedb'
-
-# Misc
-alias e='code .'
-alias cca="codeclimate analyze"
-alias ccag="codeclimate analyze `git status --porcelain | sed s/^...//`"
-alias aliases='code ~/dotfiles/zsh/aliases.zsh'
-
-# Make sudo understand aliases
-alias sudo='sudo '

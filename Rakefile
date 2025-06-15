@@ -11,43 +11,30 @@ namespace :dotfiles do
     newline
     system('sudo -v')
 
-    # %w[zsh ruby symlinks macos_defaults config_files homebrew code].each do |t|
-    %w[homebrew symlinks].each do |t|
+    %w[zsh homebrew symlinks asdf macos_defaults].each do |t|
       Rake::Task["dotfiles:#{t}"].invoke
       newline
     end
   end
 
-  task :zsh do
-    Dotfiles::Zsh.run
-  end
-
-  task :python do
-    Dotfiles::Python.run
-  end
-
-  task :ruby do
-    Dotfiles::Ruby.run
-  end
-
-  task :symlinks do
-    Dotfiles::Symlinks.run
-  end
-
-  task :macos_defaults do
-    Dotfiles::MacosDefaults.run
-  end
-
-  task :config_files do
-    Dotfiles::ConfigFiles.run
+  task :asdf do
+    Dotfiles::Asdf.run
   end
 
   task :homebrew do
     Dotfiles::Homebrew.run
   end
 
-  task :code do
-    Dotfiles::Code.run
+  task :macos_defaults do
+    # Dotfiles::MacosDefaults.run
+  end
+
+  task :symlinks do
+    Dotfiles::Symlinks.run
+  end
+
+  task :zsh do
+    Dotfiles::Zsh.run
   end
 
 end

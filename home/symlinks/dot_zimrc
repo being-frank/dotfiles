@@ -5,7 +5,8 @@ zmodule input
 
 # === Productivity
 
-zmodule git
+zmodule asdf
+# zmodule git
 zmodule termtitle
 zmodule utility
 
@@ -28,6 +29,6 @@ zmodule joke/zim-github-cli
 
 # zmodule zsh-users/zsh-completions --fpath src
 zmodule completion
-# zmodule zsh-users/zsh-syntax-highlighting
+zmodule zsh-users/zsh-syntax-highlighting
 # zmodule zsh-users/zsh-history-substring-search
 # zmodule zsh-users/zsh-autosuggestions

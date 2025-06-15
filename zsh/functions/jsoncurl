@@ -1,3 +1,0 @@
-jsoncurl() {
-  curl "$@" | python -mjson.tool
-}

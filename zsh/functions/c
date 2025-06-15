@@ -1,7 +1,0 @@
-if [ ! -z "$1" ] && [ -s "$CODE/platform45/$1" ]; then
-  cd "$CODE/platform45/$1"
-elif [ ! -z "$1" ] && [ -s "$CODE/frznk-tank/$1" ]; then
-  cd "$CODE/frznk-tank/$1"
-elif [ ! -z "$1" ] && [ -s "$CODE/github.com/$1" ]; then
-  cd "$CODE/github.com/$1"
-fi

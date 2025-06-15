@@ -1,2 +1,3 @@
 git/.gitconfig.symlink
 backups/*_backup
+zsh.o/*

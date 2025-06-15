@@ -1,23 +1,20 @@
+export EDITOR=code
+export LANG=en_US.UTF-8
+export LC_ALL=$LANG
+export LC_CTYPE=$LANG
+export ZSH_FILES=$HOME/dotfiles/zsh
+
+# Enable Emacs-style keyboard shortcuts.
 bindkey -e
 
-# === Initialize modules
-
-ZIM_HOME="$HOME/.zim"
-
-# Download zimfw plugin manager if missing.
-if [[ ! -e ${ZIM_HOME}/zimfw.zsh ]]; then
-  curl -fsSL --create-dirs -o ${ZIM_HOME}/zimfw.zsh \
-  https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
-fi
-
-# Install missing modules, and update ${ZIM_HOME}/init.zsh if missing or outdated.
-if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZDOTDIR:-${HOME}}/.zimrc ]]; then
-  source ${ZIM_HOME}/zimfw.zsh init -q
-fi
-
-source ${ZIM_HOME}/init.zsh
-
-# === Aliases
-
+# reload! is a priority alias to reload the zsh configuration.
 alias reload!='exec zsh'
-# alias 'vim=nvim'
+
+# Source $ZSH_FILES/zim.zsh first.
+source $ZSH_FILES/zim.zsh
+source $ZSH_FILES/aliases.zsh
+
+# Add additional directories to $PATH.
+#
+export PATH="./bin:\
+$PATH"
