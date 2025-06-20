@@ -1,19 +1,21 @@
 '$schema' = 'https://starship.rs/config-schema.json'
 
-palette             = 'catppuccin-macchiato'
+palette             = 'catppuccin-mocha-neon'
 add_newline         = true
 continuation_prompt = '[❯❯ ](dimmed white)'
 
+#      
+
 format = """\
-[](power-1)\
+[](power-1-bg)\
 $time\
-[](bg:power-2 fg:power-1)\
+[](bg:power-2-bg fg:power-1-bg)\
 $directory\
-[](bg:power-3 fg:power-2)\
+[](bg:power-3-bg fg:power-2-bg)\
 $git_branch\
-[](bg:power-4 fg:power-3)\
+[](bg:power-4-bg fg:power-3-bg)\
 $git_commit\
-[](fg:power-4)\
+[](fg:power-4-bg)\
 $fill\
 $cmd_duration\
 $git_state\
@@ -21,16 +23,13 @@ $git_status\
 $git_metrics\
 [  ]($style)\
 $line_break\
-$character"""
+$ruby$character"""
 
 [character]
-  disabled                  = false
-  success_symbol            = '[❯](bold fg:green)'
-  error_symbol              = '[❯](bold fg:red)'
-  vimcmd_symbol             = '[❮](bold fg:green)'
-  vimcmd_replace_one_symbol = '[❮](bold fg:purple)'
-  vimcmd_replace_symbol     = '[❮](bold fg:purple)'
-  vimcmd_visual_symbol      = '[❮](bold fg:yellow)'
+  disabled       = false
+  success_symbol = '[❯](bold fg:green)'
+  error_symbol   = '[❯](bold fg:red)'
+  vimcmd_symbol  = '[❮](bold fg:green)'
 
 [cmd_duration]
   format   = '[ 󰅒 $duration ](italic white)'
@@ -38,11 +37,11 @@ $character"""
 
 [directory]
   disabled          = false
-  style             = 'bg:power-2 fg:text-dark'
-  format            = '[ $path]($style)[$read_only]($read_only_style)'
+  style             = 'bg:power-2-bg fg:power-2-fg'
+  format            = '[  $path]($style)[$read_only]($read_only_style)'
   home_symbol       = '~' # '󰣘'
   truncate_to_repo  = false
-  truncation_length = 0
+  truncation_length = 4
   truncation_symbol = '…/'
 
 [fill]
@@ -50,12 +49,12 @@ $character"""
 
 [git_branch]
   symbol = ''
-  style  = 'bg:power-3'
-  format = '[[ $symbol $branch(:$remote_branch)](bg:power-3 fg:text-dark)]($style)'
+  style  =  'bg:power-3-bg fg:power-3-fg'
+  format = '[ $symbol $branch(:$remote_branch)]($style)'
 
 [git_commit]
   disabled      = false
-  style         = 'bg:power-4 fg:text-dark'
+  style         = 'bg:power-4-bg fg:power-4-fg'
   format        = '[  $hash$tag]($style)'
   only_detached = false
   tag_disabled  = false
@@ -63,9 +62,9 @@ $character"""
 
 [git_metrics]
   disabled      = false
-  format        = '([+$added]($added_style)) ([-$deleted]($deleted_style))'
-  added_style   = 'bg:green fg:black'
-  deleted_style = 'bg:red fg:black'
+  format        = '([[](green-fg)+$added ]($added_style))([ -$deleted[](red-fg)]($deleted_style))'
+  added_style   = 'bg:green-fg fg:green-bg bold'
+  deleted_style = 'bg:red-fg fg:red-bg bold'
 
 [git_state]
   format = '\([$state($progress_current/$progress_total)]($style)\) '
@@ -73,38 +72,65 @@ $character"""
 [git_status]
   style      = ''
   format     = '[$ahead_behind$staged$untracked$renamed$modified$deleted$conflicted$stashed]($style)'
-  ahead      = '[ ${count} ](purple)'
-  behind     = '[ ${count} ](cyan)'
-  conflicted = '[ 󰳤 ${count} ](red)'
-  deleted    = '[ 󰛲 ${count} ](red)'
-  diverged   = '[ [${ahead_count}](purple) [${behind_count}](cyan) ]($style)'
-  modified   = '[ 󱗝 ${count} ](yellow)'
-  renamed    = '[ 󰏭 ${count} ](yellow)'
-  staged     = '[  ${count} ](blue)'
-  stashed    = '[ 󰰡 ${count} ](purple)'
-  untracked  = '[ 󰜄 ${count} ](green)'
+  ahead      = '[${count} ](mauve-fg)'
+  behind     = '[${count} ](blue-fg)'
+  conflicted = '[󰳤 ${count} ](red-fg)'
+  deleted    = '[󰛲 ${count} ](red-fg)'
+  diverged   = '[[${ahead_count}](mauve-fg) [${behind_count}](blue-fg) ]($style)'
+  modified   = '[󱗝 ${count} ](yellow-fg)'
+  renamed    = '[󰏭 ${count} ](yellow-fg)'
+  staged     = '[ ${count} ](blue-fg)'
+  stashed    = '[󰰡 ${count} ](mauve-fg)'
+  untracked  = '[󰜄 ${count} ](green-fg)'
 
 [line_break]
   disabled = false
 
-[nodejs]
-  symbol = ""
-  style = "bg:color_blue"
-  format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[python]
-  symbol = ""
-  style = "bg:color_blue"
-  format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+[ruby]
+  style    = 'bg:red-bg fg:white'
+  format   = '[[](red-bg)$symbol ($version)[](red-bg)]($style)'
+  symbol   = ''
 
 [time]
   disabled        = false
-  format          = '[[ $time](bg:power-1 fg:text-dark)]($style)'
+  format          = '[[ $time](bg:power-1-bg fg:power-1-fg)]($style)'
   time_format     = '%R'
   utc_time_offset = 'local'
 
+# Choose second color from the left
+# https://colorkit.io/shades-tints/#F38BA8-9
+[palettes.catppuccin-mocha-neon]
+  red-fg        = '#F38BA8'
+  red-bg        = '#2F111A'
+  green-fg      = '#A6E3A1'
+  green-bg      = '#192B17'
+  yellow-fg     = '#F9E2AF'
+  yellow-bg     = '#312815'
+  blue-fg       = '#89B4FA'
+  blue-bg       = '#101D31'
+  mauve-fg      = '#CBA6F7'
+  mauve-bg      = '#211430'
+  peach-fg      = '#FAB387'
+  peach-bg      = '#311D10'
+  teal-fg       = '#94E2D5'
+  teal-bg       = '#152B28'
+  sapphire-fg   = '#74C7EC'
+  sapphire-bg   = '#10242E'
+  # ----
+  power-1-fg    = '#74C7EC'
+  power-1-bg    = '#10242E'
+  power-2-fg    = '#F38BA8'
+  power-2-bg    = '#2F111A'
+  power-3-fg    = '#F9E2AF'
+  power-3-bg    = '#312815'
+  power-4-fg    = '#A6E3A1'
+  power-4-bg    = '#192B17'
+  ruby          = '#F38BA8'
+  text-dark     = '#1E1E2E'
+  text-sub-dark = 'white'
+
 [palettes.sage]
-  text-dark = '#1e2030'
+  text-dark = '#1E2030'
   power-1   = '#CED9D6'
   power-2   = '#A3B7B3'
   power-3   = '#7B9891'
@@ -113,14 +139,3 @@ $character"""
   power-6   = '#072E28'
   power-7   = '#001D18'
   ruby      = '#A51D24'
-
-[palettes.catppuccin-macchiato]
-  text-dark = '#1E2030'
-  power-1   = '#ED8796'
-  power-2   = '#F5A97F'
-  power-3   = '#EED49F'
-  power-4   = '#A6DA95'
-  power-5   = '#A6DA95'
-  power-6   = '#A6DA95'
-  power-7   = '#A6DA95'
-  ruby      = '#F38BA8'
