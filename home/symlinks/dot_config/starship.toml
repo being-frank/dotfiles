@@ -23,7 +23,7 @@ $git_status\
 $git_metrics\
 [  ]($style)\
 $line_break\
-$ruby$character"""
+${custom.asdf-ruby}$character"""
 
 [character]
   disabled       = false
@@ -34,6 +34,13 @@ $ruby$character"""
 [cmd_duration]
   format   = '[ 󰅒 $duration ](italic white)'
   min_time = 2_000
+
+[custom.asdf-ruby]
+  style   = 'fg:white bold'
+  format  = "[ [$symbol](red-fg)($output) \n]($style)"
+  command = 'zsh ~/dotfiles/zsh/asdf_tool_versions.zsh ruby'
+  symbol  = ' '
+  when    = 'zsh ~/dotfiles/zsh/asdf_tool_versions.zsh ruby'
 
 [directory]
   disabled          = false
@@ -48,9 +55,9 @@ $ruby$character"""
   symbol = ' '
 
 [git_branch]
-  symbol = ''
-  style  =  'bg:power-3-bg fg:power-3-fg'
+  style  = 'bg:power-3-bg fg:power-3-fg'
   format = '[ $symbol $branch(:$remote_branch)]($style)'
+  symbol = ''
 
 [git_commit]
   disabled      = false
@@ -86,11 +93,6 @@ $ruby$character"""
 [line_break]
   disabled = false
 
-[ruby]
-  style    = 'bg:red-bg fg:white'
-  format   = '[[](red-bg)$symbol ($version)[](red-bg)]($style)'
-  symbol   = ''
-
 [time]
   disabled        = false
   format          = '[[ $time](bg:power-1-bg fg:power-1-fg)]($style)'
@@ -125,7 +127,6 @@ $ruby$character"""
   power-3-bg    = '#312815'
   power-4-fg    = '#A6E3A1'
   power-4-bg    = '#192B17'
-  ruby          = '#F38BA8'
   text-dark     = '#1E1E2E'
   text-sub-dark = 'white'
 
@@ -138,4 +139,3 @@ $ruby$character"""
   power-5   = '#345952'
   power-6   = '#072E28'
   power-7   = '#001D18'
-  ruby      = '#A51D24'

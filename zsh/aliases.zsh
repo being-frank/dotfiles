@@ -2,18 +2,25 @@
 alias aliases='$EDITOR ~/dotfiles/zsh/aliases.zsh'
 
 # Editor alias
-alias e='code .'
+alias e='$EDITOR .'
 
 # Make sudo understand aliases
 alias sudo='sudo '
 
 # Directories
 #
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
-alias ......='cd ../../../../..'
+alias ..='cd ../'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias .....='cd ../../../../'
+alias ......='cd ../../../../../'
+alias cl='clear'
+alias cp='cp -iv'
+alias l='ls -lh'
+alias la='ls -Alh'
+alias lh='ls -Alt | head'
+alias mv='mv -iv'
+alias rm='rm -iv'
 
 # Git
 #
@@ -22,19 +29,38 @@ alias gaa='git add --all'
 alias gb='git branch'
 alias gc='git commit'
 alias gca='git commit -a'
-alias gcm='git commit -m'
 alias gce='git commit --allow-empty -m'
+alias gcm='git commit -m'
 alias gcnm='git commit -n -m'
 alias gco='git checkout'
 alias gdf='git diff --color | diff-so-fancy'
+alias gg='gaa && gcms'
 alias gl='git lg'
 alias gpl='git pull --prune'
 alias gps='git push -u origin HEAD'
+alias grmerged='git branch --no-color --merged | command grep -vE "^(\+|\*|\s*(master|main|develop)\s*$)" | command xargs -n 1 git branch -d'
 alias gs='git status -sb'
 alias gst='git stash'
 alias gstp='git stash pop'
-alias grmerged='git branch --no-color --merged | command grep -vE "^(\+|\*|\s*(master|main|develop)\s*$)" | command xargs -n 1 git branch -d'
-alias gg='gaa && gcms'
+
+gcma()  { git commit -m "Add: $*"; }      # add
+gcmr()  { git commit -m "Remove: $*"; }   # remove
+gcmu()  { git commit -m "Update: $*"; }   # update
+gcmf()  { git commit -m "Fix: $*"; }      # fix
+gcmhf() { git commit -m "Hotfix: $*"; }   # hotfix
+gcmrl() { git commit -m "Release: $*"; }  # release
+gcmrf() { git commit -m "Refactor: $*"; } # refactor
+gcms()  { git commit -m "Commit: $(date +%Y-%m-%d--%H:%M) $*"; }
+gcnms() { git commit -n -m "Commit: $(date +%Y-%m-%d--%H:%M) $*"; }
+
+# Rails
+#
+alias be='bundle exec'
+alias dev-restart='overmind restart web worker vite'
+alias rce="EDITOR='code --wait' rails credentials:edit"
+alias rr='rails runner'
+alias rspec='rspec --color --format doc'
+alias rst='touch tmp/restart.txt'
 
 # OS
 #
