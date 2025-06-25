@@ -1,1 +1,1 @@
-![more dots](https://raw.githubusercontent.com/frank-who/dotfiles/master/assets/dots.jpg)
+![more dots](https://raw.githubusercontent.com/being-frank/dotfiles/master/assets/dots.jpg)
