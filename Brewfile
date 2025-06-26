@@ -7,7 +7,7 @@ brew 'git'
 
 brew 'postgresql@17'
 brew 'redis'
-brew 'sqlite'
+brew 'sqlite3'
 
 # ==== Shell
 
