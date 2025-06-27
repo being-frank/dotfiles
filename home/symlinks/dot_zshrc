@@ -10,11 +10,11 @@ bindkey -e
 # reload! is a priority alias to reload the zsh configuration.
 alias reload!='exec zsh'
 
+# Add additional paths to $PATH before sourcing zim.zsh.
+export PATH="./bin\
+/opt/homebrew/opt/postgresql@17/bin:\
+$PATH"
+
 # Source $ZSH_FILES/zim.zsh first.
 source $ZSH_FILES/zim.zsh
 source $ZSH_FILES/aliases.zsh
-
-# Add additional directories to $PATH.
-#
-export PATH="./bin:\
-$PATH"

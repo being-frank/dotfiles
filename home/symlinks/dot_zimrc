@@ -6,19 +6,13 @@ zmodule input
 # === Productivity
 
 zmodule asdf
-# zmodule git
 zmodule termtitle
 zmodule utility
 
 # === Prompt enhancement
 
 zmodule duration-info
-zmodule git-info
 zmodule prompt-pwd
-
-# === Distro-specific
-
-zmodule homebrew
 
 # === Community modules
 

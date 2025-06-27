@@ -52,7 +52,8 @@ ${custom.asdf-ruby}$character"""
   truncation_symbol = '…/'
 
 [fill]
-  symbol = ' '
+  disabled = true
+  symbol   = ' '
 
 [git_branch]
   style  = 'bg:power-3-bg fg:power-3-fg'
@@ -78,7 +79,7 @@ ${custom.asdf-ruby}$character"""
 
 [git_status]
   style      = ''
-  format     = '[$ahead_behind$staged$untracked$renamed$modified$deleted$conflicted$stashed]($style)'
+  format     = '[  $ahead_behind$staged$untracked$renamed$modified$deleted$conflicted$stashed]($style)'
   ahead      = '[${count} ](mauve-fg)'
   behind     = '[${count} ](blue-fg)'
   conflicted = '[󰳤 ${count} ](red-fg)'
