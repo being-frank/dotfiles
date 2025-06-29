@@ -23,7 +23,7 @@ $git_status\
 $git_metrics\
 [  ]($style)\
 $line_break\
-${custom.asdf-ruby}$character"""
+${custom.asdf-ruby}\n$character"""
 
 [character]
   disabled       = false
@@ -37,7 +37,7 @@ ${custom.asdf-ruby}$character"""
 
 [custom.asdf-ruby]
   style   = 'fg:white bold'
-  format  = "[ [$symbol](red-fg)($output) \n]($style)"
+  format  = "[ [$symbol](red-fg)($output)\n ]($style)"
   command = 'zsh ~/dotfiles/zsh/asdf_tool_versions.zsh ruby'
   symbol  = ' '
   when    = 'zsh ~/dotfiles/zsh/asdf_tool_versions.zsh ruby'
