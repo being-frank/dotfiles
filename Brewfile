@@ -19,6 +19,7 @@ brew 'tree'
 brew 'asdf'
 brew 'graphviz'
 brew 'imagemagick'
+brew 'neovim'
 brew 'overmind'
 
 # ==== Ruby dependencies

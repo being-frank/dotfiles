@@ -17,11 +17,10 @@ $git_branch\
 $git_commit\
 [](fg:power-4-bg)\
 $fill\
-$cmd_duration\
 $git_state\
 $git_status\
 $git_metrics\
-[  ]($style)\
+$cmd_duration\
 $line_break\
 ${custom.asdf-ruby}\n$character"""
 
@@ -32,7 +31,7 @@ ${custom.asdf-ruby}\n$character"""
   vimcmd_symbol  = '[❮](bold fg:green)'
 
 [cmd_duration]
-  format   = '[ 󰅒 $duration ](italic white)'
+  format   = '[  󰅒 $duration ](italic white)'
   min_time = 2_000
 
 [custom.asdf-ruby]
