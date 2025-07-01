@@ -22,7 +22,7 @@ $git_status\
 $git_metrics\
 $cmd_duration\
 $line_break\
-${custom.asdf-ruby}\n$character"""
+${custom.asdf-ruby}${custom.asdf-nodejs}\n$character"""
 
 [character]
   disabled       = false
@@ -34,9 +34,17 @@ ${custom.asdf-ruby}\n$character"""
   format   = '[  󰅒 $duration ](italic white)'
   min_time = 2_000
 
+[custom.asdf-nodejs]
+  disabled = true
+  style    = 'fg:white bold'
+  format   = "[ [$symbol](yellow-fg)($output) ]($style)"
+  command  = 'zsh ~/dotfiles/zsh/asdf_tool_versions.zsh nodejs'
+  symbol   = '󰎙 '
+  when     = 'zsh ~/dotfiles/zsh/asdf_tool_versions.zsh nodejs'
+
 [custom.asdf-ruby]
   style   = 'fg:white bold'
-  format  = "[ [$symbol](red-fg)($output)\n ]($style)"
+  format  = "[ [$symbol](red-fg)($output) ]($style)"
   command = 'zsh ~/dotfiles/zsh/asdf_tool_versions.zsh ruby'
   symbol  = ' '
   when    = 'zsh ~/dotfiles/zsh/asdf_tool_versions.zsh ruby'
