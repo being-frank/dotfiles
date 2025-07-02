@@ -61,6 +61,7 @@ alias rce="EDITOR='code --wait' rails credentials:edit"
 alias rr='rails runner'
 alias rspec='rspec --color --format doc'
 alias rst='touch tmp/restart.txt'
+alias rdbc='rails dbconsole'
 
 # OS
 #
