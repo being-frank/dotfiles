@@ -4,6 +4,7 @@ palette             = 'catppuccin-mocha-neon'
 add_newline         = true
 continuation_prompt = '[❯❯ ](dimmed white)'
 
+# https://www.nerdfonts.com/cheat-sheet
 #      
 
 format = """\
@@ -43,11 +44,12 @@ ${custom.asdf-ruby}${custom.asdf-nodejs}\n$character"""
   when     = 'zsh ~/dotfiles/zsh/asdf_tool_versions.zsh nodejs'
 
 [custom.asdf-ruby]
-  style   = 'fg:white bold'
-  format  = "[ [$symbol](red-fg)($output) ]($style)"
-  command = 'zsh ~/dotfiles/zsh/asdf_tool_versions.zsh ruby'
-  symbol  = ' '
-  when    = 'zsh ~/dotfiles/zsh/asdf_tool_versions.zsh ruby'
+  disabled = true
+  style    = 'fg:white bold'
+  format   = "[ [$symbol](red-fg)($output) ]($style)"
+  command  = 'zsh ~/dotfiles/zsh/asdf_tool_versions.zsh ruby'
+  symbol   = ' '
+  when     = 'zsh ~/dotfiles/zsh/asdf_tool_versions.zsh ruby'
 
 [directory]
   disabled          = false
@@ -86,7 +88,7 @@ ${custom.asdf-ruby}${custom.asdf-nodejs}\n$character"""
 
 [git_status]
   style      = ''
-  format     = '[  $ahead_behind$staged$untracked$renamed$modified$deleted$conflicted$stashed]($style)'
+  format     = '[ $ahead_behind$staged$untracked$renamed$modified$deleted$conflicted$stashed]($style)'
   ahead      = '[${count} ](mauve-fg)'
   behind     = '[${count} ](blue-fg)'
   conflicted = '[󰳤 ${count} ](red-fg)'
@@ -127,14 +129,14 @@ ${custom.asdf-ruby}${custom.asdf-nodejs}\n$character"""
   sapphire-fg   = '#74C7EC'
   sapphire-bg   = '#10242E'
   # ----
-  power-1-fg    = '#74C7EC'
-  power-1-bg    = '#10242E'
-  power-2-fg    = '#F38BA8'
-  power-2-bg    = '#2F111A'
-  power-3-fg    = '#F9E2AF'
-  power-3-bg    = '#312815'
-  power-4-fg    = '#A6E3A1'
-  power-4-bg    = '#192B17'
+  power-1-fg    = 'white bold'
+  power-1-bg    = '#152B28'
+  power-2-fg    = '#94E2D5'
+  power-2-bg    = '#152B28'
+  power-3-fg    = '#74C7EC'
+  power-3-bg    = '#10242E'
+  power-4-fg    = '#CBA6F7'
+  power-4-bg    = '#211430'
   text-dark     = '#1E1E2E'
   text-sub-dark = 'white'
 
