@@ -85,7 +85,7 @@ ${custom.asdf-ruby}\n$character"""
   behind     = '[↓${count} ](blue-fg)'
   conflicted = '[󰳤 ${count} ](red-fg)'
   deleted    = '[󰛲 ${count} ](red-fg)'
-  diverged   = '[[${ahead_count}](mauve-fg) [${behind_count}](blue-fg) ]($style)'
+  diverged   = '[[↑${ahead_count}](mauve-fg) [↓${behind_count}](blue-fg) ]($style)'
   modified   = '[󱗝 ${count} ](yellow-fg)'
   renamed    = '[󰏭 ${count} ](yellow-fg)'
   staged     = '[ ${count} ](blue-fg)'

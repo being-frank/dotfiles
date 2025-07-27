@@ -7,6 +7,10 @@ alias e='$EDITOR .'
 # Make sudo understand aliases
 alias sudo='sudo '
 
+# Cloudflare
+#
+alias run-bless-tunnel='cloudflared tunnel run bless-app-frank'
+
 # Directories
 #
 alias ..='cd ../'
@@ -21,6 +25,16 @@ alias la='ls -Alh'
 alias lh='ls -Alt | head'
 alias mv='mv -iv'
 alias rm='rm -iv'
+
+# Docker
+#
+alias dcb='docker compose build'
+alias dcbc='docker compose build --no-cache'
+alias dcd='docker compose down --remove-orphans'
+alias dcr='docker compose run --rm app'
+alias dcx='docker compose restart'
+alias dcs='docker compose stop'
+alias dce='docker compose exec app'
 
 # Git
 #
@@ -62,6 +76,7 @@ alias rr='rails runner'
 alias rspec='rspec --color --format doc'
 alias rst='touch tmp/restart.txt'
 alias rdbc='rails dbconsole'
+alias rdbm='rails db:migrate'
 
 # OS
 #
