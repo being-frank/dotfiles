@@ -1,4 +1,4 @@
-export EDITOR=/usr/local/bin/code
+export EDITOR=/usr/local/bin/cursor
 # export EDITOR=/opt/homebrew/bin/nvim
 export LANG=en_US.UTF-8
 export LC_ALL=$LANG
@@ -17,4 +17,5 @@ source $ZSH_FILES/aliases.zsh
 
 # Add additional paths to $PATH before sourcing zim.zsh.
 export PATH="./bin:\
+$HOME/.local/bin:\
 $PATH"

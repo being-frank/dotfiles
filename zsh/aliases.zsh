@@ -71,7 +71,7 @@ gcnms() { git commit -n -m "Commit: $(date +%Y-%m-%d--%H:%M) $*"; }
 #
 alias be='bundle exec'
 alias dev-restart='overmind restart web worker vite'
-alias rce="EDITOR='code --wait' rails credentials:edit"
+alias rce="EDITOR='$EDITOR --wait' rails credentials:edit"
 alias rr='rails runner'
 alias rspec='rspec --color --format doc'
 alias rst='touch tmp/restart.txt'

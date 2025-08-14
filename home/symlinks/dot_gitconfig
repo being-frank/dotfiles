@@ -13,7 +13,7 @@
 
 [core]
   autocrlf     = input
-  editor       = code
+  editor       = $EDITOR --wait
   excludesfile = ~/.gitexcludes
   ignorecase   = false
   whitespace   = fix,-indent-with-non-tab,trailing-space,cr-at-eol
