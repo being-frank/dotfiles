@@ -16,7 +16,6 @@ brew 'tree'
 
 # ==== Devlopment tools
 
-brew 'asdf'
 brew 'graphviz'
 brew 'imagemagick'
 brew 'neovim'

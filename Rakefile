@@ -11,14 +11,10 @@ namespace :dotfiles do
     newline
     system('sudo -v')
 
-    %w[zsh homebrew symlinks asdf macos_defaults].each do |t|
+    %w[zsh homebrew symlinks macos_defaults rbenv].each do |t|
       Rake::Task["dotfiles:#{t}"].invoke
       newline
     end
-  end
-
-  task :asdf do
-    Dotfiles::Asdf.run
   end
 
   task :homebrew do
@@ -27,6 +23,10 @@ namespace :dotfiles do
 
   task :macos_defaults do
     # Dotfiles::MacosDefaults.run
+  end
+
+  task :rbenv do
+    Dotfiles::Rbenv.run
   end
 
   task :symlinks do

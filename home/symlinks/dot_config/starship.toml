@@ -23,7 +23,7 @@ $git_status\
 $git_metrics\
 $cmd_duration\
 $line_break\
-${custom.asdf-ruby}\n$character"""
+${custom.rbenv}\n$character"""
 
 [character]
   disabled       = false
@@ -35,13 +35,13 @@ ${custom.asdf-ruby}\n$character"""
   format   = '[  󰅒 $duration ](italic white)'
   min_time = 2_000
 
-[custom.asdf-ruby]
+[custom.rbenv]
   disabled = false
   style    = 'fg:white bold'
   format   = "[ [$symbol](red-fg)($output) ]($style)"
-  command  = 'zsh ~/dotfiles/zsh/asdf_tool_versions.zsh ruby'
+  command  = 'zsh ~/dotfiles/zsh/ruby_version.zsh'
   symbol   = ' '
-  when     = 'zsh ~/dotfiles/zsh/asdf_tool_versions.zsh ruby'
+  when     = 'zsh ~/dotfiles/zsh/ruby_version.zsh'
 
 [directory]
   disabled          = false
@@ -97,7 +97,8 @@ ${custom.asdf-ruby}\n$character"""
 
 [time]
   disabled        = false
-  format          = '[[ $time](bg:power-1-bg fg:power-1-fg)]($style)'
+  style           = 'bg:power-1-bg'
+  format          = '[ $time]($style)'
   time_format     = '%R'
   utc_time_offset = 'local'
 
@@ -120,7 +121,6 @@ ${custom.asdf-ruby}\n$character"""
   teal-bg       = '#152B28'
   sapphire-fg   = '#74C7EC'
   sapphire-bg   = '#10242E'
-  # ----
   power-1-fg    = 'white bold'
   power-1-bg    = '#152B28'
   power-2-fg    = '#94E2D5'
