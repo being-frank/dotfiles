@@ -98,7 +98,7 @@ ${custom.rbenv}\n$character"""
 [time]
   disabled        = false
   style           = 'bg:power-1-bg'
-  format          = '[ $time]($style)'
+  format          = '[  $time]($style)'
   time_format     = '%R'
   utc_time_offset = 'local'
 
