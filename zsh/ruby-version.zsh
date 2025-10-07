@@ -14,5 +14,5 @@ done
 if [ $ruby_version_file_path ]; then
   head -n 1 "$ruby_version_file_path"
 else
-  return 1
+  ruby -v | awk '{print $2}'
 fi

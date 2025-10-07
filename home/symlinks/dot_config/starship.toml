@@ -39,9 +39,9 @@ ${custom.rbenv}\n$character"""
   disabled = false
   style    = 'fg:white bold'
   format   = "[ [$symbol](red-fg)($output) ]($style)"
-  command  = 'zsh ~/dotfiles/zsh/ruby_version.zsh'
-  symbol   = ' '
-  when     = 'zsh ~/dotfiles/zsh/ruby_version.zsh'
+  command  = 'zsh ~/dotfiles/zsh/ruby-version.zsh'
+  symbol   = '  ' # https://unicode-explorer.com/c/202F
+  when     = 'zsh ~/dotfiles/zsh/ruby-version.zsh'
 
 [directory]
   disabled          = false
