@@ -7,10 +7,6 @@ alias e='$EDITOR .'
 # Make sudo understand aliases
 alias sudo='sudo '
 
-# Cloudflare
-#
-alias run-bless-tunnel='cloudflared tunnel run bless-app-frank'
-
 # Directories
 #
 alias ..='cd ../'
@@ -80,5 +76,5 @@ alias rdbm='rails db:migrate'
 
 # OS
 #
-killport() { kill -9 $(lsof -ti:$*); }
+killport() { kill -9 $(lsof -ti :$*); }
 alias flushdnscache='dscacheutil -flushcache'

@@ -1,4 +1,4 @@
-export EDITOR=/usr/local/bin/code
+export EDITOR=/usr/local/bin/cursor
 # export EDITOR=/opt/homebrew/bin/nvim
 export LANG=en_US.UTF-8
 export LC_ALL=$LANG
@@ -17,10 +17,14 @@ FPATH=~/.rbenv/completions:"$FPATH"
 source $ZSH_FILES/zim.zsh
 source $ZSH_FILES/aliases.zsh
 
+# bun
+export BUN_INSTALL=$HOME/.bun
+
+# rbenv
+eval "$(~/.rbenv/bin/rbenv init - --no-rehash zsh)"
+
 # Add additional paths to $PATH before sourcing zim.zsh.
 export PATH="./bin:\
+$BUN_INSTALL/bin:\
 $HOME/.local/bin:\
 $PATH"
-
-# Added by `rbenv init` on Mon Oct  6 16:23:01 SAST 2025
-eval "$(~/.rbenv/bin/rbenv init - --no-rehash zsh)"

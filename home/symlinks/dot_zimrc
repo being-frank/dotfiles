@@ -5,7 +5,6 @@ zmodule input
 
 # ==== Productivity
 
-zmodule asdf
 zmodule termtitle
 zmodule utility
 
@@ -29,3 +28,4 @@ zmodule zsh-users/zsh-completions --fpath src
 zmodule completion
 zmodule zsh-users/zsh-syntax-highlighting
 zmodule zsh-users/zsh-autosuggestions
+zmodule muchobien/zim-bun
