@@ -5,6 +5,7 @@ behaviours
 binstub
 binstubs
 bunx
+chsh
 crowsfoot
 cssbundling
 dbconsole
@@ -44,6 +45,7 @@ libpq
 logfiles
 lookbook
 mediastream
+muchobien
 Neue
 nocov
 nvim

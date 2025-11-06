@@ -43,7 +43,7 @@ alias gce='git commit --allow-empty -m'
 alias gcm='git commit -m'
 alias gcnm='git commit -n -m'
 alias gco='git checkout'
-alias gdf='git diff --color | diff-so-fancy'
+alias gdf='git diff --color'
 alias gg='gaa && gcms'
 alias gl='git lg'
 alias gpl='git pull --prune'
@@ -60,8 +60,8 @@ gcmf()  { git commit -m "Fix: $*"; }      # fix
 gcmhf() { git commit -m "Hotfix: $*"; }   # hotfix
 gcmrl() { git commit -m "Release: $*"; }  # release
 gcmrf() { git commit -m "Refactor: $*"; } # refactor
-gcms()  { git commit -m "Commit: $(date +%Y-%m-%d--%H:%M) $*"; }
-gcnms() { git commit -n -m "Commit: $(date +%Y-%m-%d--%H:%M) $*"; }
+gcms()  { git commit -m "✅ $(date +%Y-%m-%d--%H:%M) $*"; }
+gcnms() { git commit -n -m "✅ $(date +%Y-%m-%d--%H:%M) $*"; }
 
 # Rails
 #
