@@ -5,7 +5,7 @@ brew 'git'
 
 # ==== Database
 
-brew 'postgresql@17'
+brew 'postgresql@18'
 brew 'redis'
 brew 'sqlite3'
 
