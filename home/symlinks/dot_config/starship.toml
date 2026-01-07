@@ -23,7 +23,7 @@ $git_status\
 $git_metrics\
 $cmd_duration\
 $line_break\
-${custom.rbenv}\n$character"""
+${custom.rbenv}${custom.nodenv}\n$character"""
 
 [character]
   disabled       = false
@@ -35,12 +35,20 @@ ${custom.rbenv}\n$character"""
   format   = '[  󰅒 $duration ](italic white)'
   min_time = 2_000
 
+[custom.nodenv]
+  disabled = false
+  style    = 'fg:white bold'
+  format   = "[ ([$symbol](yellow-fg)$output) ]($style)"
+  command  = 'zsh ~/dotfiles/zsh/node-version.zsh'
+  symbol   = ' ' # https://unicode-explorer.com/c/202F
+  when     = 'zsh ~/dotfiles/zsh/node-version.zsh'
+
 [custom.rbenv]
   disabled = false
   style    = 'fg:white bold'
-  format   = "[ [$symbol](red-fg)($output) ]($style)"
+  format   = "[ ([$symbol](red-fg)$output) ]($style)"
   command  = 'zsh ~/dotfiles/zsh/ruby-version.zsh'
-  symbol   = '  ' # https://unicode-explorer.com/c/202F
+  symbol   = ' ' # https://unicode-explorer.com/c/202F
   when     = 'zsh ~/dotfiles/zsh/ruby-version.zsh'
 
 [directory]

@@ -25,6 +25,10 @@ namespace :dotfiles do
     # Dotfiles::MacosDefaults.run
   end
 
+  task :nodenv do
+    Dotfiles::Nodenv.run
+  end
+
   task :rbenv do
     Dotfiles::Rbenv.run
   end

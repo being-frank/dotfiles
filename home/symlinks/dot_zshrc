@@ -12,6 +12,7 @@ bindkey -e
 alias reload!='exec zsh'
 
 FPATH=~/.rbenv/completions:"$FPATH"
+FPATH=~/.nodenv/completions:"$FPATH"
 
 # Source $ZSH_FILES/zim.zsh first.
 source $ZSH_FILES/zim.zsh
@@ -19,6 +20,9 @@ source $ZSH_FILES/aliases.zsh
 
 # bun
 export BUN_INSTALL=$HOME/.bun
+
+# nodenv
+eval "$(~/.nodenv/bin/nodenv init - --no-rehash zsh)"
 
 # rbenv
 eval "$(~/.rbenv/bin/rbenv init - --no-rehash zsh)"
