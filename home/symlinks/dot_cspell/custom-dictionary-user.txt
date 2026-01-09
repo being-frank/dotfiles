@@ -6,6 +6,7 @@ binstub
 binstubs
 bunx
 catppuccin
+CDPATH
 chsh
 crowsfoot
 cssbundling
@@ -54,6 +55,7 @@ mediastream
 muchobien
 Neue
 nocov
+nodenv
 nvim
 OBJC
 omakase

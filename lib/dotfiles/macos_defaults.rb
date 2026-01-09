@@ -57,7 +57,8 @@ module Dotfiles
             desc: 'Disable press-and-hold for keys in favor of key repeat',
             cmds: [
               'defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false'
-            ]
+            ],
+            skip: true
           },
           {
             desc: 'Set a blazingly fast keyboard repeat rate',
@@ -73,13 +74,6 @@ module Dotfiles
               'defaults write NSGlobalDomain AppleLocale -string "en_ZA@currency=ZAR"',
               'defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"',
               'defaults write NSGlobalDomain AppleMetricUnits -bool true'
-            ]
-          },
-          {
-            desc: 'Set the timezone',
-            cmds: [
-              # see `sudo systemsetup -listtimezones` for other values
-              'sudo systemsetup -settimezone "Africa/Johannesburg" > /dev/null'
             ]
           },
           {
@@ -113,18 +107,6 @@ module Dotfiles
             ]
           },
           'Energy Saving',
-          {
-            desc: 'Restart automatically on power loss',
-            cmds: [
-              'sudo pmset -a autorestart 1'
-            ]
-          },
-          {
-            desc: 'Restart automatically if the computer freezes',
-            cmds: [
-              'sudo systemsetup -setrestartfreeze on'
-            ]
-          },
           {
             desc: 'Sleep the display after 30 minutes',
             cmds: [
@@ -296,21 +278,13 @@ module Dotfiles
           {
             desc: 'Show item info near icons on the desktop and in other icon views',
             cmds: [
-              '/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:showItemInfo true" ~/Library/Preferences/com.apple.finder.plist',
               '/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:showItemInfo true" ~/Library/Preferences/com.apple.finder.plist',
               '/usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:showItemInfo true" ~/Library/Preferences/com.apple.finder.plist'
             ]
           },
           {
-            desc: 'Show item info to the right of the icons on the desktop',
-            cmds: [
-              '/usr/libexec/PlistBuddy -c "Set DesktopViewSettings:IconViewSettings:labelOnBottom false" ~/Library/Preferences/com.apple.finder.plist'
-            ]
-          },
-          {
             desc: 'Enable dateModified for icons on the desktop and in other icon views',
             cmds: [
-              '/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy dateModified" ~/Library/Preferences/com.apple.finder.plist',
               '/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy dateModified" ~/Library/Preferences/com.apple.finder.plist',
               '/usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy dateModified" ~/Library/Preferences/com.apple.finder.plist'
             ]
@@ -318,7 +292,6 @@ module Dotfiles
           {
             desc: 'Increase grid spacing for icons on the desktop and in other icon views',
             cmds: [
-              '/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:gridSpacing 124" ~/Library/Preferences/com.apple.finder.plist',
               '/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:gridSpacing 124" ~/Library/Preferences/com.apple.finder.plist',
               '/usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:gridSpacing 124" ~/Library/Preferences/com.apple.finder.plist'
             ]
@@ -326,7 +299,6 @@ module Dotfiles
           {
             desc: 'Increase the size of icons on the desktop and in other icon views',
             cmds: [
-              '/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:iconSize 64" ~/Library/Preferences/com.apple.finder.plist',
               '/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:iconSize 64" ~/Library/Preferences/com.apple.finder.plist',
               '/usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:iconSize 64" ~/Library/Preferences/com.apple.finder.plist'
             ]
@@ -346,7 +318,7 @@ module Dotfiles
           {
             desc: 'Show the ~/Library folder',
             cmds: [
-              'chflags nohidden ~/Library && xattr -d com.apple.FinderInfo ~/Library'
+              'chflags nohidden ~/Library'
             ]
           },
           {

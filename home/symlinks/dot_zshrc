@@ -25,11 +25,8 @@ export CDPATH="$CDPATH:$HOME/Code"
 # bun
 export BUN_INSTALL=$HOME/.bun
 
-# nodenv
-eval "$(~/.nodenv/bin/nodenv init - --no-rehash zsh)"
-
-# rbenv
-eval "$(~/.rbenv/bin/rbenv init - --no-rehash zsh)"
+source $ZSH_FILES/nodenv.zsh
+source $ZSH_FILES/rbenv.zsh
 
 # Add additional paths to $PATH.
 export PATH="./bin:\
