@@ -5,13 +5,18 @@ behaviours
 binstub
 binstubs
 bunx
+catppuccin
 chsh
 crowsfoot
 cssbundling
 dbconsole
 dcbc
+deconstantize
+demodulize
+demodulized
 dotenv
 dscacheutil
+endgroup
 falseclass
 favicons
 flushcache
@@ -41,6 +46,7 @@ jsbundling
 kamal
 killport
 kitsune
+kwargs
 libpq
 logfiles
 lookbook
@@ -63,6 +69,7 @@ propshaft
 railtie
 rdbc
 rdbm
+redcarpet
 rescuable
 rubocop
 Sidecarable
@@ -72,6 +79,7 @@ stylesheet
 trueclass
 uuidv
 valkey
+vimcmd
 vite
 webmock
 xcontext
