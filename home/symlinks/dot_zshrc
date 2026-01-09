@@ -1,5 +1,4 @@
 export EDITOR=/usr/local/bin/cursor
-# export EDITOR=/opt/homebrew/bin/nvim
 export LANG=en_US.UTF-8
 export LC_ALL=$LANG
 export LC_CTYPE=$LANG
@@ -11,19 +10,28 @@ bindkey -e
 # reload! is a priority alias to reload the zsh configuration.
 alias reload!='exec zsh'
 
-FPATH=~/.rbenv/completions:"$FPATH"
+# nodenv and rbenv completions.
+export FPATH="$HOME/.nodenv/completions:\
+$HOME/.rbenv/completions:\
+$FPATH"
 
 # Source $ZSH_FILES/zim.zsh first.
 source $ZSH_FILES/zim.zsh
 source $ZSH_FILES/aliases.zsh
 
+# shortcuts
+export CDPATH="$CDPATH:$HOME/Code"
+
 # bun
 export BUN_INSTALL=$HOME/.bun
+
+# nodenv
+eval "$(~/.nodenv/bin/nodenv init - --no-rehash zsh)"
 
 # rbenv
 eval "$(~/.rbenv/bin/rbenv init - --no-rehash zsh)"
 
-# Add additional paths to $PATH before sourcing zim.zsh.
+# Add additional paths to $PATH.
 export PATH="./bin:\
 $BUN_INSTALL/bin:\
 $HOME/.local/bin:\

@@ -22,7 +22,11 @@ namespace :dotfiles do
   end
 
   task :macos_defaults do
-    # Dotfiles::MacosDefaults.run
+    Dotfiles::MacosDefaults.run
+  end
+
+  task :nodenv do
+    Dotfiles::Nodenv.run
   end
 
   task :rbenv do

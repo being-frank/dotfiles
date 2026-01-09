@@ -14,5 +14,8 @@ done
 if [ $ruby_version_file_path ]; then
   head -n 1 "$ruby_version_file_path"
 else
-  ruby -v | awk '{print $2}'
+  version=$(ruby -v | awk '{print $2}')
+  if [ $version ]; then
+    echo "$version•"
+  fi
 fi
