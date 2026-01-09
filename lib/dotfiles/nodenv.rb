@@ -5,7 +5,8 @@ module Dotfiles
     def run
       message('==> nodenv'.bold)
       nodenv
-      node_build
+      install_node_plugin('node-build')
+      install_node_plugin('nodenv-nvmrc')
     end
 
     private
@@ -23,16 +24,16 @@ module Dotfiles
         end
       end
 
-      def node_build
-        directory = "#{ENV['HOME']}/.nodenv/plugins/node-build"
+      def install_node_plugin(plugin)
+        directory = "#{ENV['HOME']}/.nodenv/plugins/#{plugin}"
 
         if Dir.exist?(directory)
           Dir.chdir(directory)
           system('git pull')
-          message("[Updated] node-build => #{directory}".blue)
+          message("[Updated] #{plugin} => #{directory}".blue)
         else
-          system("git clone git@github.com:nodenv/node-build.git #{directory}")
-          message("[Installed] node-build => #{directory}".green)
+          system("git clone git@github.com:nodenv/#{plugin}.git #{directory}")
+          message("[Installed] #{plugin} => #{directory}".green)
         end
       end
 

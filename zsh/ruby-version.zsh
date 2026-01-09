@@ -16,6 +16,6 @@ if [ $ruby_version_file_path ]; then
 else
   version=$(ruby -v | awk '{print $2}')
   if [ $version ]; then
-    echo "$version﹡"
+    echo "$version•"
   fi
 fi

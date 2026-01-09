@@ -2,6 +2,7 @@
 
 palette             = 'catppuccin-mocha-neon'
 add_newline         = true
+command_timeout     = 1000
 continuation_prompt = '[❯❯ ](dimmed white)'
 
 # https://www.nerdfonts.com/cheat-sheet
@@ -38,7 +39,7 @@ ${custom.rbenv}${custom.nodenv}\n$character"""
 [custom.nodenv]
   disabled = false
   style    = 'fg:white bold'
-  format   = "[ ([$symbol](yellow-fg)$output) ]($style)"
+  format   = "[ ([$symbol](green-fg)$output) ]($style)"
   command  = 'zsh ~/dotfiles/zsh/node-version.zsh'
   symbol   = ' ' # https://unicode-explorer.com/c/202F
   when     = 'zsh ~/dotfiles/zsh/node-version.zsh'
