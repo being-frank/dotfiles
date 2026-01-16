@@ -41,6 +41,7 @@ hotwired
 hsts
 httponly
 importmap
+irbrc
 isready
 jbuilder
 jsbundling
