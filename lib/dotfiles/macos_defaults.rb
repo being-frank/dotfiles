@@ -218,7 +218,7 @@ module Dotfiles
           {
             desc: 'Display full POSIX path as Finder window title',
             cmds: [
-              'defaults write com.apple.finder _FXShowPosixPathInTitle -bool true'
+              'defaults write com.apple.finder _FXShowPosixPathInTitle -bool false'
             ]
           },
           {

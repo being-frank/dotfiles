@@ -1,3 +1,4 @@
+activerecord
 ANNOTATERB
 bachman
 behaviour
@@ -8,6 +9,7 @@ bunx
 catppuccin
 CDPATH
 chsh
+clickaway
 cobranding
 compensafe
 crowsfoot
@@ -21,6 +23,7 @@ demodulized
 docmagic
 docutech
 dotenv
+Downpayment
 dscacheutil
 eclosing
 econsent
@@ -66,6 +69,7 @@ libpq
 loanofficers
 logfiles
 lookbook
+materialdesignicons
 mediastream
 muchobien
 multiborrower
@@ -99,8 +103,10 @@ rubocop
 Sidecarable
 simplecov
 Simplenexus
+snui
 srand
 stylesheet
+titleized
 trac
 trueclass
 urla
@@ -109,5 +115,8 @@ valkey
 valu
 vimcmd
 vite
+vuetify
+vuetifycss
+vuex
 webmock
 xcontext
