@@ -18,6 +18,6 @@ if [ $node_version_file_path ]; then
 else
   version=$(node -v)
   if [ $version ]; then
-    echo "$version•"
+    print -P "$version%F{yellow}・%f"
   fi
 fi

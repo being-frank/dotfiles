@@ -1,8 +1,49 @@
+# Application
+scrollback-limit = 10000000
+
+# Clipboard
 clipboard-read = allow
+clipboard-trim-trailing-spaces = false
 clipboard-write = allow
-copy-on-select = true
-font-family = "FiraCode Nerd Font Propo"
+copy-on-select = clipboard
+
+# Colors
+background = #1E1E2E
+bold-is-bright = true
+cursor-color = #F5E0DC
+cursor-text = #1E1E2E
+foreground = #CDD6F4
+palette = 0=#45475A
+palette = 1=#F38BA8
+palette = 2=#A6E3A1
+palette = 3=#F9E2AF
+palette = 4=#89B4FA
+palette = 5=#F5C2E7
+palette = 6=#94E2D5
+palette = 7=#A6ADC8
+palette = 8=#585B70
+palette = 9=#F37799
+palette = 10=#89D88B
+palette = 11=#EBD391
+palette = 12=#74A8FC
+palette = 13=#F2AEDE
+palette = 14=#6BD7CA
+palette = 15=#BAC2DE
+selection-background = #585B70
+selection-foreground = #CDD6F4
+theme = Catppuccin Mocha
+
+# Fonts
+adjust-cell-height=1
+font-family = GeistMono Nerd Font Propo
 font-size = 12
-theme = catppuccin-mocha.conf
-window-padding-x = 4
-window-padding-y = 4
+font-thicken = false
+font-thicken-strength=1
+
+# Window
+background-blur = 20
+# macos-titlebar-style = hidden
+unfocused-split-opacity = 0.8
+window-padding-x = 10
+window-padding-y = 10
+window-theme = dark

@@ -60,8 +60,8 @@ gcmf()  { git commit -m "Fix: $*"; }      # fix
 gcmhf() { git commit -m "Hotfix: $*"; }   # hotfix
 gcmrl() { git commit -m "Release: $*"; }  # release
 gcmrf() { git commit -m "Refactor: $*"; } # refactor
-gcms()  { git commit -m "✅ $(date +%Y-%m-%d--%H:%M) $*"; }
-gcnms() { git commit -n -m "✅ $(date +%Y-%m-%d--%H:%M) $*"; }
+gcms()  { git commit -m "📌 $(date +%Y-%m-%d--%H:%M) $*"; }
+gcnms() { git commit -n -m "📌 $(date +%Y-%m-%d--%H:%M) $*"; }
 
 # Rails
 #
@@ -77,4 +77,5 @@ alias rdbm='rails db:migrate'
 # OS
 #
 killport() { kill -9 $(lsof -ti :$*); }
+alias grep='grep --color=auto'
 alias flushdnscache='dscacheutil -flushcache'
