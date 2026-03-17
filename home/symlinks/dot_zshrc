@@ -37,3 +37,6 @@ export PATH="./bin:\
 $BUN_INSTALL/bin:\
 $HOME/.local/bin:\
 $PATH"
+
+# bun completions
+[ -s "/Users/frank/.bun/_bun" ] && source "/Users/frank/.bun/_bun"
