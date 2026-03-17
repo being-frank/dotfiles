@@ -32,11 +32,11 @@ eval "$(~/.nodenv/bin/nodenv init - --no-rehash zsh)"
 # rbenv
 eval "$(~/.rbenv/bin/rbenv init - --no-rehash zsh)"
 
+# bun completions
+[ -s "/Users/frank/.bun/_bun" ] && source "/Users/frank/.bun/_bun"
+
 # Add additional paths to $PATH.
 export PATH="./bin:\
 $BUN_INSTALL/bin:\
 $HOME/.local/bin:\
 $PATH"
-
-# bun completions
-[ -s "/Users/frank/.bun/_bun" ] && source "/Users/frank/.bun/_bun"
