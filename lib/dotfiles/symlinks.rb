@@ -15,7 +15,8 @@ module Dotfiles
         symlinks.each do |path|
           next if File.directory?(path)
 
-          create_symlink(path, max_length)
+          # TODO: Fix the linking method so that i can link the `dot_*` directory instead of the files in the folder
+          # create_symlink(path, max_length)
         end
 
         system('exec zsh')
