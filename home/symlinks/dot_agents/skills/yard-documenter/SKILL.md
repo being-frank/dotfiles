@@ -75,20 +75,19 @@ Use this structure when documenting methods. Omit any tags that don't apply.
 # @param name [Types] description
 # @param options [Hash] description
 # @option options [Types] :key (default_value) description
-#
-# @overload method_signature(parameters)
-#   Indented docstring for overload
-#   @param name [Types] description
-#   @return [Types] description
-#
-# @overload method_signature(parameters)
-#   Indented docstring for overload
-#   @param name [Types] description
-#   @return [Types] description
-#
 # @return [Types] description
 #
 # @raise [ExceptionType] description
+#
+# @overload method_signature(parameters)
+#   Indented docstring for overload
+#   @param name [Types] description
+#   @return [Types] description
+#
+# @overload method_signature(parameters)
+#   Indented docstring for overload
+#   @param name [Types] description
+#   @return [Types] description
 #
 # @example Basic usage
 #   code_example
@@ -127,7 +126,6 @@ After:
 # @param email [String] the email address to search for
 # @param options [Hash] optional search modifiers
 # @option options [Boolean] :case_sensitive (false) whether to match case exactly
-#
 # @return [User, nil] the matching user, or nil if not found
 #
 # @raise [ArgumentError] if email is blank
