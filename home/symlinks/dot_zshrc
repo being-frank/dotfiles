@@ -1,4 +1,4 @@
-export EDITOR=/usr/local/bin/cursor
+export EDITOR=/usr/local/bin/code
 export GREP_COLOR='1;36;40'
 export LANG=en_US.UTF-8
 export LC_ALL=$LANG
@@ -18,6 +18,7 @@ FPATH=~/.rbenv/completions:"$FPATH"
 # Source $ZSH_FILES/zim.zsh first.
 source $ZSH_FILES/zim.zsh
 source $ZSH_FILES/aliases.zsh
+[[ -f $HOME/private-aliases.zsh ]] && source $HOME/private-aliases.zsh
 
 # shortcuts
 export CDPATH="$CDPATH:$HOME/Code"
@@ -31,11 +32,11 @@ eval "$(~/.nodenv/bin/nodenv init - --no-rehash zsh)"
 # rbenv
 eval "$(~/.rbenv/bin/rbenv init - --no-rehash zsh)"
 
+# bun completions
+[ -s "/Users/frank/.bun/_bun" ] && source "/Users/frank/.bun/_bun"
+
 # Add additional paths to $PATH.
 export PATH="./bin:\
 $BUN_INSTALL/bin:\
 $HOME/.local/bin:\
 $PATH"
-
-# bun completions
-[ -s "/Users/frank/.bun/_bun" ] && source "/Users/frank/.bun/_bun"

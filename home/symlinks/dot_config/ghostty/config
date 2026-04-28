@@ -1,5 +1,5 @@
 # Application
-scrollback-limit = 10000000
+scrollback-limit = 1000000
 
 # Clipboard
 clipboard-read = allow
@@ -36,7 +36,7 @@ theme = Catppuccin Mocha
 # Fonts
 adjust-cell-height=1
 font-family = GeistMono Nerd Font Propo
-font-size = 12
+font-size = 10.5
 font-thicken = false
 font-thicken-strength=1
 
