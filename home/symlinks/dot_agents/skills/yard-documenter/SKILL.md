@@ -20,7 +20,7 @@ license: MIT
 
 - Short description ending with a period (`.`)
 - Always prefix method names with `#` (e.g. `#find_by_email`)
-- Keep line length under 100 characters
+- Keep line length under 80 characters
 - At least one `@example` showing basic usage with the following rules:
   - Use single-quotes (`'`) for all strings in the example input code
   - Use double-quotes (`"`) when a string is interpolated in the example input code

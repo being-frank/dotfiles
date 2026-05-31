@@ -1,4 +1,4 @@
-export EDITOR=/usr/local/bin/code
+export EDITOR="code --wait"
 export GREP_COLOR='1;36;40'
 export LANG=en_US.UTF-8
 export LC_ALL=$LANG
@@ -11,9 +11,10 @@ bindkey -e
 # reload! is a priority alias to reload the zsh configuration.
 alias reload!='exec zsh'
 
-# nodenv and rbenv completions.
+# Additional completions.
 FPATH=~/.nodenv/completions:"$FPATH"
 FPATH=~/.rbenv/completions:"$FPATH"
+FPATH=~/.grok/completions/zsh:"$FPATH"
 
 # Source $ZSH_FILES/zim.zsh first.
 source $ZSH_FILES/zim.zsh
@@ -38,5 +39,7 @@ eval "$(~/.rbenv/bin/rbenv init - --no-rehash zsh)"
 # Add additional paths to $PATH.
 export PATH="./bin:\
 $BUN_INSTALL/bin:\
+$HOME/.grok/bin:\
 $HOME/.local/bin:\
+$HOME/.opencode/bin:\
 $PATH"
