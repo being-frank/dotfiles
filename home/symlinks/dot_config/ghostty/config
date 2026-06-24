@@ -8,11 +8,6 @@ clipboard-write = allow
 copy-on-select = clipboard
 
 # Colors
-background = #1E1E2E
-bold-is-bright = true
-cursor-color = #F5E0DC
-cursor-text = #1E1E2E
-foreground = #CDD6F4
 palette = 0=#45475A
 palette = 1=#F38BA8
 palette = 2=#A6E3A1
@@ -29,9 +24,13 @@ palette = 12=#74A8FC
 palette = 13=#F2AEDE
 palette = 14=#6BD7CA
 palette = 15=#BAC2DE
+bold-is-bright = true
+background = #1E1E2E
+foreground = #CDD6F4
+cursor-color = #F5E0DC
+cursor-text = #1E1E2E
 selection-background = #585B70
 selection-foreground = #CDD6F4
-theme = Catppuccin Mocha
 
 # Fonts
 adjust-cell-height=1

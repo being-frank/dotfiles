@@ -5,6 +5,7 @@ axios
 bachman
 behaviour
 behaviours
+betterspecs
 bindkey
 binstub
 binstubs
@@ -145,6 +146,7 @@ simplecov
 simplenexus
 snui
 srand
+srgb
 stim
 stims
 stylesheet
