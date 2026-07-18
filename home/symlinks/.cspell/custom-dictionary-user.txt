@@ -1,5 +1,6 @@
 activerecord
 annotaterb
+antoineco
 aprc
 axios
 bachman
@@ -12,6 +13,7 @@ binstubs
 bunx
 catppuccin
 cdpath
+Centralise
 checkmarks
 chsh
 clickaway
@@ -95,6 +97,7 @@ mediastream
 menlo
 metcalf
 minmax
+modeless
 muchobien
 multiborrower
 nbsp

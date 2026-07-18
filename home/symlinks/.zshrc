@@ -1,10 +1,3 @@
-export EDITOR="code --wait"
-export GREP_COLOR='1;36;40'
-export LANG=en_US.UTF-8
-export LC_ALL=$LANG
-export LC_CTYPE=$LANG
-export ZSH_FILES=$HOME/dotfiles/zsh
-
 # Enable Emacs-style keyboard shortcuts.
 bindkey -e
 
@@ -25,7 +18,7 @@ source $ZSH_FILES/aliases.zsh
 export CDPATH="$CDPATH:$HOME/Code"
 
 # bun
-export BUN_INSTALL=$HOME/.bun
+export BUN_INSTALL="$HOME/.bun"
 
 # nodenv
 eval "$(~/.nodenv/bin/nodenv init - --no-rehash zsh)"
@@ -35,11 +28,3 @@ eval "$(~/.rbenv/bin/rbenv init - --no-rehash zsh)"
 
 # bun completions
 [ -s "/Users/frank/.bun/_bun" ] && source "/Users/frank/.bun/_bun"
-
-# Add additional paths to $PATH.
-export PATH="./bin:\
-$BUN_INSTALL/bin:\
-$HOME/.grok/bin:\
-$HOME/.local/bin:\
-$HOME/.opencode/bin:\
-$PATH"

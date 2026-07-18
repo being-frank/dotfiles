@@ -33,9 +33,16 @@ namespace :dotfiles do
     Dotfiles::Rbenv.run
   end
 
-  task :symlinks do
-    Dotfiles::Symlinks.run
+  namespace :symlinks do
+    task :run do
+      Dotfiles::Symlinks.run
+    end
+
+    task :unlink do
+      Dotfiles::Symlinks.unlink
+    end
   end
+  task symlinks: 'symlinks:run'
 
   task :zsh do
     Dotfiles::Zsh.run

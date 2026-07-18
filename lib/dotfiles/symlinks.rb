@@ -9,29 +9,41 @@ module Dotfiles
       def run
         message('==> Symlinks'.bold)
 
-        symlinks   = Dir.glob("#{HOME_SYMLINKS}/**/*").sort
+        symlinks   = all_symlinks
         max_length = symlinks.map { |file| file_basename(file).length }.max
 
         symlinks.each do |path|
-          next if File.directory?(path)
-
-          # TODO: Fix the linking method so that i can link the `dot_*` directory instead of the files in the folder
-          # create_symlink(path, max_length)
+          create_symlink(path, max_length)
         end
 
         system('exec zsh')
       end
 
+      def unlink
+        message('==> Removing symlinks'.bold)
+
+        symlinks   = all_symlinks
+        max_length = symlinks.map { |file| file_basename(file).length }.max
+
+        symlinks.each do |path|
+          remove_symlink(path, max_length)
+        end
+      end
+
       private
+
+        def all_symlinks
+          excluded_dirs = %w[. .. .DS_Store]
+          Dir.glob("#{HOME_SYMLINKS}/{.,}*").reject { |f| excluded_dirs.include?(file_basename(f)) }.sort
+        end
 
         def file_basename(file)
           file.gsub("#{HOME_SYMLINKS}/", '')
         end
 
         def create_symlink(file, max_length=0)
-          basename   = file_basename(file)
           source     = File.expand_path(file, ROOT_PATH)
-          target     = File.expand_path("~/#{file_basename(file).gsub(/^dot_/, '.')}")
+          target     = File.expand_path("~/#{file_basename(file)}")
           target_dir = File.dirname(target)
           message    = ''
 
@@ -51,6 +63,23 @@ module Dotfiles
           end
 
           message(("%-#{max_length}s %s" % [message, nil]))
+        end
+
+        def remove_symlink(file, max_length=0)
+          source = File.expand_path(file, ROOT_PATH)
+          target = File.expand_path("~/#{file_basename(file)}")
+          msg    = ''
+
+          if File.symlink?(target) #&& File.readlink(target) == source
+            File.unlink(target)
+            msg = "[Removed] #{target}".green
+          elsif File.symlink?(target) || File.exist?(target)
+            msg = "[Skipped] Not our symlink: #{target}".blue
+          else
+            msg = "[Skipped] No target: #{target}".blue
+          end
+
+          message(("%-#{max_length}s %s" % [msg, nil]))
         end
 
     end

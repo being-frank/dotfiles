@@ -13,6 +13,7 @@ brew 'sqlite3'
 
 brew 'starship'
 brew 'tree'
+brew 'zoxide'
 
 # ==== Devlopment tools
 

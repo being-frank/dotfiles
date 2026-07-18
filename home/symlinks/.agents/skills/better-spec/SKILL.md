@@ -351,12 +351,14 @@ When generating or reviewing RSpec tests, verify each of these:
 - [ ] All cases covered: valid, edge, invalid
 - [ ] Uses `expect` / `is_expected.to` (no `should`)
 - [ ] `subject` used where appropriate
-- [ ] `let`/`let!` used instead of `before` + instance variables
+- [ ] `let` / `let!` used instead of `before` + instance variables
 - [ ] Mocks used sparingly and only when justified
 - [ ] Minimal data created per test
-- [ ] FactoryBot used (no raw `.create(...)` with full attributes)
+- [ ] FactoryBot used
 - [ ] Readable RSpec matchers used
 - [ ] Shared examples used for repeated patterns
-- [ ] Controller behaviour tested via request specs (`spec/requests/`), not controller specs
+- [ ] Controller behaviour tested via request specs saved in (`spec/controllers/`) with `type: :request`
 - [ ] No "should" in `it` descriptions
 - [ ] External HTTP calls are stubbed
+- [ ] `before` / `subject` must always be multi-line blocks using `do...end` syntax
+- [ ] Remove stale references

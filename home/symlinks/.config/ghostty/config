@@ -34,8 +34,8 @@ selection-foreground = #CDD6F4
 
 # Fonts
 adjust-cell-height=1
-font-family = GeistMono Nerd Font Propo
-font-size = 10.5
+font-family = JetBrainsMono Nerd Font Propo
+font-size = 11
 font-thicken = false
 font-thicken-strength=1
 
