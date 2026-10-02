@@ -1,6 +1,6 @@
 '$schema' = 'https://starship.rs/config-schema.json'
 
-palette             = 'catppuccin-mocha-neon'
+palette             = 'tokyo-night-neon'
 add_newline         = true
 command_timeout     = 1000
 continuation_prompt = '[❯❯ ](dimmed white)'
@@ -27,126 +27,112 @@ $line_break\
 ${custom.rbenv}${custom.nodenv}\n$character"""
 
 [character]
-  disabled       = false
-  success_symbol = '[❯](bold fg:green)'
-  error_symbol   = '[❯](bold fg:red)'
-  vimcmd_symbol  = '[❮](bold fg:green)'
+disabled       = false
+success_symbol = '[❯](bold fg:green)'
+error_symbol   = '[❯](bold fg:red)'
+vimcmd_symbol  = '[❮](bold fg:green)'
 
 [cmd_duration]
-  format   = '[  󰅒 $duration ](italic white)'
-  min_time = 2_000
+format   = '[  󰅒 $duration ](italic white)'
+min_time = 2_000
 
 [custom.nodenv]
-  disabled = false
-  style    = 'fg:white bold'
-  format   = "[ ([$symbol](green-fg)$output) ]($style)"
-  command  = 'zsh ~/dotfiles/zsh/node-version.zsh'
-  symbol   = ' ' # https://unicode-explorer.com/c/202F
-  when     = 'zsh ~/dotfiles/zsh/node-version.zsh'
+disabled = false
+style    = 'fg:white bold'
+format   = "[ ([$symbol](green-fg)$output) ]($style)"
+command  = 'zsh ~/dotfiles/zsh/node-version.zsh'
+symbol   = ' ' # https://unicode-explorer.com/c/202F
+when     = 'zsh ~/dotfiles/zsh/node-version.zsh'
 
 [custom.rbenv]
-  disabled = false
-  style    = 'fg:white bold'
-  format   = "[ ([$symbol](red-fg)$output) ]($style)"
-  command  = 'zsh ~/dotfiles/zsh/ruby-version.zsh'
-  symbol   = ' ' # https://unicode-explorer.com/c/202F
-  when     = 'zsh ~/dotfiles/zsh/ruby-version.zsh'
+disabled = false
+style    = 'fg:white bold'
+format   = "[ ([$symbol](red-fg)$output) ]($style)"
+command  = 'zsh ~/dotfiles/zsh/ruby-version.zsh'
+symbol   = ' ' # https://unicode-explorer.com/c/202F
+when     = 'zsh ~/dotfiles/zsh/ruby-version.zsh'
 
 [directory]
-  disabled          = false
-  style             = 'bg:power-2-bg fg:power-2-fg'
-  format            = '[  $path]($style)[$read_only]($read_only_style)'
-  home_symbol       = '~' # '󰣘'
-  truncate_to_repo  = false
-  truncation_length = 4
-  truncation_symbol = '…/'
+disabled          = false
+style             = 'bg:power-2-bg fg:power-2-fg'
+format            = '[  $path]($style)[$read_only]($read_only_style)'
+home_symbol       = '~' # '󰣘'
+truncate_to_repo  = false
+truncation_length = 4
+truncation_symbol = '…/'
 
 [fill]
-  disabled = true
-  symbol   = ' '
+disabled = true
+symbol   = ' '
 
 [git_branch]
-  style  = 'bg:power-3-bg fg:power-3-fg'
-  format = '[ $symbol $branch(:$remote_branch)]($style)'
-  symbol = ''
+style  = 'bg:power-3-bg fg:power-3-fg'
+format = '[ $symbol $branch(:$remote_branch)]($style)'
+symbol = ''
 
 [git_commit]
-  disabled      = false
-  style         = 'bg:power-4-bg fg:power-4-fg'
-  format        = '[  $hash$tag]($style)'
-  only_detached = false
-  tag_disabled  = false
-  tag_symbol    = '  '
+disabled      = false
+style         = 'bg:power-4-bg fg:power-4-fg'
+format        = '[  $hash$tag]($style)'
+only_detached = false
+tag_disabled  = false
+tag_symbol    = '  '
 
 [git_metrics]
-  disabled      = false
-  format        = '([[](green-fg)+$added ]($added_style))([ -$deleted[](red-fg)]($deleted_style))'
-  added_style   = 'bg:green-fg fg:green-bg bold'
-  deleted_style = 'bg:red-fg fg:red-bg bold'
+disabled      = false
+format        = '([[](green-fg)+$added ]($added_style))([ -$deleted[](red-fg)]($deleted_style))'
+added_style   = 'bg:green-fg fg:green-bg bold'
+deleted_style = 'bg:red-fg fg:red-bg bold'
 
 [git_state]
-  format = '\([$state($progress_current/$progress_total)]($style)\) '
+format = '\([$state($progress_current/$progress_total)]($style)\) '
 
 [git_status]
-  style      = ''
-  format     = '[ $ahead_behind$staged$untracked$renamed$modified$deleted$conflicted$stashed]($style)'
-  ahead      = '[↑${count} ](mauve-fg)'
-  behind     = '[↓${count} ](blue-fg)'
-  conflicted = '[󰳤 ${count} ](red-fg)'
-  deleted    = '[󰛲 ${count} ](red-fg)'
-  diverged   = '[[↑${ahead_count}](mauve-fg) [↓${behind_count}](blue-fg) ]($style)'
-  modified   = '[󱗝 ${count} ](yellow-fg)'
-  renamed    = '[󰏭 ${count} ](yellow-fg)'
-  staged     = '[ ${count} ](blue-fg)'
-  stashed    = '[󰰡 ${count} ](mauve-fg)'
-  untracked  = '[󰜄 ${count} ](green-fg)'
+style      = ''
+format     = '[ $ahead_behind$staged$untracked$renamed$modified$deleted$conflicted$stashed]($style)'
+ahead      = '[↑${count} ](magenta-fg)'
+behind     = '[↓${count} ](blue-fg)'
+conflicted = '[󰳤 ${count} ](red-fg)'
+deleted    = '[󰛲 ${count} ](red-fg)'
+diverged   = '[[↑${ahead_count}](magenta-fg) [↓${behind_count}](blue-fg) ]($style)'
+modified   = '[󱗝 ${count} ](yellow-fg)'
+renamed    = '[󰏭 ${count} ](yellow-fg)'
+staged     = '[ ${count} ](blue-fg)'
+stashed    = '[󰰡 ${count} ](magenta-fg)'
+untracked  = '[󰜄 ${count} ](green-fg)'
 
 [line_break]
-  disabled = false
+disabled = false
 
 [time]
-  disabled        = false
-  style           = 'bg:power-1-bg'
-  format          = '[  $time]($style)'
-  time_format     = '%R'
-  utc_time_offset = 'local'
+disabled        = false
+style           = 'bg:power-1-bg'
+format          = '[  $time]($style)'
+time_format     = '%R'
+utc_time_offset = 'local'
 
 # Choose second color from the left
-# https://colorkit.io/shades-tints/#F38BA8-9
-[palettes.catppuccin-mocha-neon]
-  red-fg        = '#F38BA8'
-  red-bg        = '#2F111A'
-  green-fg      = '#A6E3A1'
-  green-bg      = '#192B17'
-  yellow-fg     = '#F9E2AF'
-  yellow-bg     = '#312815'
-  blue-fg       = '#89B4FA'
-  blue-bg       = '#101D31'
-  mauve-fg      = '#CBA6F7'
-  mauve-bg      = '#211430'
-  peach-fg      = '#FAB387'
-  peach-bg      = '#311D10'
-  teal-fg       = '#94E2D5'
-  teal-bg       = '#152B28'
-  sapphire-fg   = '#74C7EC'
-  sapphire-bg   = '#10242E'
-  power-1-fg    = 'white bold'
-  power-1-bg    = '#152B28'
-  power-2-fg    = '#94E2D5'
-  power-2-bg    = '#152B28'
-  power-3-fg    = '#74C7EC'
-  power-3-bg    = '#10242E'
-  power-4-fg    = '#CBA6F7'
-  power-4-bg    = '#211430'
-  text-dark     = '#1E1E2E'
-  text-sub-dark = 'white'
-
-[palettes.sage]
-  text-dark = '#1E2030'
-  power-1   = '#CED9D6'
-  power-2   = '#A3B7B3'
-  power-3   = '#7B9891'
-  power-4   = '#537871'
-  power-5   = '#345952'
-  power-6   = '#072E28'
-  power-7   = '#001D18'
+# https://colorkit.io/shades-tints/#F7768E-9
+[palettes.tokyo-night-neon]
+red-fg        = '#F7768E'
+red-bg        = '#310E15'
+green-fg      = '#73DACA'
+green-bg      = '#0E2533'
+yellow-fg     = '#E0AF68'
+yellow-bg     = '#2C200f'
+blue-fg       = '#7AA2F7'
+blue-bg       = '#0E1A31'
+magenta-fg    = '#BB9AF7'
+magenta-bg    = '#1D1331'
+cyan-fg       = '#7DCFFF'
+cyan-bg       = '#0E2533'
+power-1-fg    = '#C0CAF5'
+power-1-bg    = '#0E2533'
+power-2-fg    = '#73DACA'
+power-2-bg    = '#152B28'
+power-3-fg    = '#7DCFFF'
+power-3-bg    = '#0E2533'
+power-4-fg    = '#BB9AF7'
+power-4-bg    = '#1D1331'
+text-dark     = '#1A1B26'
+text-sub-dark = '#C0CAF5'

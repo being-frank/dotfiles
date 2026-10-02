@@ -8,17 +8,24 @@ export XDG_STATE_HOME="$HOME/.local/state"
 
 
 # ---------- Editor ----------
-# Sets the default editor
+# Sets the default editor used by git, crontab, etc.
 #
 export EDITOR="code --wait"
+
 
 # ---------- Misc. ----------
 #
 export GREP_COLOR="1;36;40"
-export LANG=en_US.UTF-8
+export LANG="en_US.UTF-8"
 export LC_ALL=$LANG
 export LC_CTYPE=$LANG
 export ZSH_FILES="$HOME/dotfiles/zsh"
+
+
+# ---------- Starship ----------
+#
+export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship.toml"
+
 
 # ---------- Path ----------
 # Add additional paths to $PATH

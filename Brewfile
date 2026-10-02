@@ -11,9 +11,9 @@ brew 'sqlite3'
 
 # ==== Shell
 
+brew 'eza'
+brew 'zplug'
 brew 'starship'
-brew 'tree'
-brew 'zoxide'
 
 # ==== Devlopment tools
 

@@ -1,1 +1,2 @@
-home/symlinks/dot_config/fish
+/home/symlinks/.config/zsh/*
+!.keep

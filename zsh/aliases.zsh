@@ -1,40 +1,53 @@
 # Edit aliases
-alias aliases='$EDITOR ~/dotfiles/zsh/aliases.zsh'
+alias aliases="$EDITOR $ZSH_FILES/aliases.zsh"
 
 # Editor alias
-alias e='$EDITOR .'
+alias e="$EDITOR ."
 
 # Make sudo understand aliases
 alias sudo='sudo '
 
-# Directories
-#
+
+# ---------- Directories ----------
+
+alias cl='clear'
+alias ls='eza --icons auto'            # Better ls
+alias la='eza -lah --icons auto --git' # Better ls
+alias ll='eza -lh --icons --git'       # Detailed listing
+alias tree='eza --tree --icons auto'   # Tree
+
+# Reuse ls completions for eza (avoids defining a separate completion function)
+compdef eza=ls
+
+
+# ---------- Navigation ----------
+
 alias ..='cd ../'
 alias ...='cd ../../'
-alias ....='cd ../../../'
-alias .....='cd ../../../../'
-alias ......='cd ../../../../../'
-alias cl='clear'
+alias -- -='cd -'
+
+
+# ---------- Files ----------
+
 alias cp='cp -iv'
-alias l='ls -lh'
-alias la='ls -Alh'
-alias lh='ls -Alt | head'
 alias mv='mv -iv'
 alias rm='rm -iv'
 
-# Docker
-#
+
+# ---------- Docker ----------
+
 alias dcb='docker compose build'
 alias dcbc='docker compose build --no-cache'
 alias dcd='docker compose down --remove-orphans'
-alias dcr='docker compose run --rm app'
-alias dcx='docker compose restart'
-alias dcs='docker compose stop'
 alias dce='docker compose exec app'
+alias dcr='docker compose run --rm app'
+alias dcs='docker compose stop'
+alias dcx='docker compose restart'
 
-# Git
-#
-alias ga='git add'
+
+# ---------- Git ----------
+
+alias ga="git add"
 alias gaa='git add --all'
 alias gb='git branch'
 alias gc='git commit'
@@ -53,18 +66,19 @@ alias gs='git status -sb'
 alias gst='git stash'
 alias gstp='git stash pop'
 
-gcma()  { git commit -m "Add: $*"; }      # add
-gcmr()  { git commit -m "Remove: $*"; }   # remove
-gcmu()  { git commit -m "Update: $*"; }   # update
-gcmf()  { git commit -m "Fix: $*"; }      # fix
-gcmhf() { git commit -m "Hotfix: $*"; }   # hotfix
-gcmrl() { git commit -m "Release: $*"; }  # release
-gcmrf() { git commit -m "Refactor: $*"; } # refactor
+gcma()  { git commit -m "Add: $*"; }
+gcmr()  { git commit -m "Remove: $*"; }
+gcmu()  { git commit -m "Update: $*"; }
+gcmf()  { git commit -m "Fix: $*"; }
+gcmhf() { git commit -m "Hotfix: $*"; }
+gcmrl() { git commit -m "Release: $*"; }
+gcmrf() { git commit -m "Refactor: $*"; }
 gcms()  { git commit -m "📌 $(date +%Y-%m-%d--%H:%M) $*"; }
 gcnms() { git commit -n -m "📌 $(date +%Y-%m-%d--%H:%M) $*"; }
 
-# Rails
-#
+
+# ---------- Rails ----------
+
 alias be='bundle exec'
 alias dev-restart='overmind restart web worker vite'
 alias rce='rails credentials:edit'
@@ -74,8 +88,9 @@ alias rst='touch tmp/restart.txt'
 alias rdbc='rails dbconsole'
 alias rdbm='rails db:migrate'
 
-# OS
-#
+
+# ---------- OS ----------
+
 killport() { kill -9 $(lsof -ti :$*); }
 alias grep='grep --color=auto'
 alias flushdnscache='dscacheutil -flushcache'

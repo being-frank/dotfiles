@@ -1,3 +1,4 @@
+accu
 activerecord
 annotaterb
 antoineco
@@ -39,6 +40,7 @@ docutech
 dotenv
 downpayment
 dscacheutil
+DUPS
 eclosing
 econsent
 endgroup
@@ -103,6 +105,7 @@ multiborrower
 nbsp
 ncino
 neue
+NOBEEP
 nocov
 nodenv
 noindex
@@ -129,6 +132,7 @@ plpgsql
 precomposed
 prequal
 procfile
+Propo
 propshaft
 pushback
 railtie
@@ -141,8 +145,10 @@ reshare
 rgba
 rowselected
 rubocop
+SAVEHIST
 scroller
 segoe
+shellenv
 sidecarable
 sidemenu
 simplecov
@@ -155,7 +161,9 @@ stims
 stylesheet
 tabset
 tagname
+titlebar
 titleized
+tokyonight
 trac
 trueclass
 urla
@@ -164,6 +172,7 @@ valkey
 valu
 varr
 vimcmd
+virtualenv
 vite
 vuetify
 vuetifycss
@@ -171,3 +180,8 @@ vuex
 webmock
 xcontext
 xdescribe
+zcompdump
+zdharma
+ZPLUG
+zplugin
+ZPLUGINDIR
