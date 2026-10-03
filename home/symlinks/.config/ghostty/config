@@ -1,14 +1,21 @@
 # Application
 scrollback-limit = 1000000
 
+
 # Clipboard
 clipboard-read = allow
 clipboard-trim-trailing-spaces = false
 clipboard-write = allow
 copy-on-select = clipboard
 
+
 # Colors
-palette = 0=#1A1B26
+#theme = TokyoNight
+
+background = #1A1B26
+foreground = #A9B1D6
+
+palette = 0=#414868
 palette = 8=#414868
 
 palette = 1=#F7768E
@@ -32,10 +39,9 @@ palette = 14=#7DCFFF
 palette = 7=#C0CAF5
 palette = 15=#C0CAF5
 
-background = #1A1B26
-foreground = #A9B1D6
 cursor-color = #C0CAF5
-cursor-text = #1A1B26
+cursor-text  = #1A1B26
+
 selection-background = #28344A
 selection-foreground =
 
@@ -43,9 +49,10 @@ selection-foreground =
 # Fonts
 adjust-cell-height=1
 font-family = JetBrainsMono Nerd Font Propo
-font-size = 11
+font-size = 12
 font-thicken = false
 font-thicken-strength=1
+
 
 # Window
 background-blur = 20

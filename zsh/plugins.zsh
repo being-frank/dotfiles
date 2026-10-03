@@ -6,7 +6,7 @@ source "$ZPLUG_HOME/init.zsh"
 
 
 zplug "zdharma-continuum/fast-syntax-highlighting", as:plugin
-# zplug "zsh-users/zsh-autosuggestions", as:plugin
+zplug "zsh-users/zsh-autosuggestions", as:plugin
 
 if ! zplug check; then
   printf "Install? [y/N]: "

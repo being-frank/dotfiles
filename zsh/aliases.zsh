@@ -11,10 +11,9 @@ alias sudo='sudo '
 # ---------- Directories ----------
 
 alias cl='clear'
-alias ls='eza --icons auto'            # Better ls
-alias la='eza -lah --icons auto --git' # Better ls
-alias ll='eza -lh --icons --git'       # Detailed listing
-alias tree='eza --tree --icons auto'   # Tree
+alias ls='eza --icons auto --group-directories-first'            # Better ls
+alias la='eza -lah --icons auto --git --group-directories-first' # Detailed listing
+alias tree='eza --tree --icons auto --group-directories-first'   # Tree
 
 # Reuse ls completions for eza (avoids defining a separate completion function)
 compdef eza=ls

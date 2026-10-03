@@ -3,7 +3,7 @@
 palette             = 'tokyo-night-neon'
 add_newline         = true
 command_timeout     = 1000
-continuation_prompt = '[❯❯ ](dimmed white)'
+continuation_prompt = '[❯❯ ](dimmed white-fg)'
 
 # https://www.nerdfonts.com/cheat-sheet
 #      
@@ -33,12 +33,12 @@ error_symbol   = '[❯](bold fg:red)'
 vimcmd_symbol  = '[❮](bold fg:green)'
 
 [cmd_duration]
-format   = '[  󰅒 $duration ](italic white)'
+format   = '[  󰅒 $duration ](italic white-fg)'
 min_time = 2_000
 
 [custom.nodenv]
 disabled = false
-style    = 'fg:white bold'
+style    = 'fg:white-2-fg'
 format   = "[ ([$symbol](green-fg)$output) ]($style)"
 command  = 'zsh ~/dotfiles/zsh/node-version.zsh'
 symbol   = ' ' # https://unicode-explorer.com/c/202F
@@ -46,7 +46,7 @@ when     = 'zsh ~/dotfiles/zsh/node-version.zsh'
 
 [custom.rbenv]
 disabled = false
-style    = 'fg:white bold'
+style    = 'fg:white-2-fg'
 format   = "[ ([$symbol](red-fg)$output) ]($style)"
 command  = 'zsh ~/dotfiles/zsh/ruby-version.zsh'
 symbol   = ' ' # https://unicode-explorer.com/c/202F
@@ -81,8 +81,8 @@ tag_symbol    = '  '
 [git_metrics]
 disabled      = false
 format        = '([[](green-fg)+$added ]($added_style))([ -$deleted[](red-fg)]($deleted_style))'
-added_style   = 'bg:green-fg fg:green-bg bold'
-deleted_style = 'bg:red-fg fg:red-bg bold'
+added_style   = 'bold bg:green-fg fg:green-bg'
+deleted_style = 'bold bg:red-fg fg:red-bg'
 
 [git_state]
 format = '\([$state($progress_current/$progress_total)]($style)\) '
@@ -106,7 +106,7 @@ disabled = false
 
 [time]
 disabled        = false
-style           = 'bg:power-1-bg'
+style           = 'bg:power-1-bg fg:white-fg'
 format          = '[  $time]($style)'
 time_format     = '%R'
 utc_time_offset = 'local'
@@ -114,6 +114,11 @@ utc_time_offset = 'local'
 # Choose second color from the left
 # https://colorkit.io/shades-tints/#F7768E-9
 [palettes.tokyo-night-neon]
+white-fg      = '#C0CAF5'
+white-2-fg    = '#A9B1D6'
+black-fg      = '#1A1B26'
+black-2-fg    = '#414868'
+#
 red-fg        = '#F7768E'
 red-bg        = '#310E15'
 green-fg      = '#73DACA'
@@ -123,16 +128,15 @@ yellow-bg     = '#2C200f'
 blue-fg       = '#7AA2F7'
 blue-bg       = '#0E1A31'
 magenta-fg    = '#BB9AF7'
-magenta-bg    = '#1D1331'
+magenta-bg    = '#31244A'
 cyan-fg       = '#7DCFFF'
 cyan-bg       = '#0E2533'
+#
 power-1-fg    = '#C0CAF5'
-power-1-bg    = '#0E2533'
+power-1-bg    = '#1A1B26'
 power-2-fg    = '#73DACA'
 power-2-bg    = '#152B28'
 power-3-fg    = '#7DCFFF'
 power-3-bg    = '#0E2533'
 power-4-fg    = '#BB9AF7'
 power-4-bg    = '#1D1331'
-text-dark     = '#1A1B26'
-text-sub-dark = '#C0CAF5'

@@ -4,13 +4,6 @@ alias reload!='exec zsh'
 source "$ZSH_FILES/environment.zsh"
 
 
-# ---------- Smart directory navigation & lf ----------
-
-# if [[ -f ~/.config/lf/icons ]]; then
-#   LF_ICONS=$(cat ~/.config/lf/icons | tr '\n' ':')
-#   export LF_ICONS
-# fi
-
 
 # ---------- Completion ----------
 
@@ -24,22 +17,20 @@ compinit -d "$XDG_CACHE_HOME/zsh/zcompdump"
 zstyle ':completion:*' menu select
 
 # Make completion case-insensitive
-# Example: "doc" can complete to "Documents"
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'  # lowercase input matches upper and lower
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' # lowercase input matches upper and lower
 
-
-# ---------- Fuzzy finder ----------
-
-if [[ -f "$HOMEBREW_PREFIX/opt/fzf/shell/key-bindings.zsh" ]]; then
-  source "$HOMEBREW_PREFIX/opt/fzf/shell/key-bindings.zsh"
-  source "$HOMEBREW_PREFIX/opt/fzf/shell/completion.zsh"
-fi
 
 
 # ---------- Homebrew ----------
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
 
+
+
+
+# ---------- brew, bun, nodenv, rbenv ----------
+
+# brew
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
@@ -49,6 +40,7 @@ eval "$(~/.nodenv/bin/nodenv init - --no-rehash zsh)"
 
 # rbenv
 eval "$(~/.rbenv/bin/rbenv init - --no-rehash zsh)"
+
 
 
 # ---------- Modular Config Files ----------
